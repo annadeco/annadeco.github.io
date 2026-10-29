@@ -1,0 +1,1556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Annadeco Editorial Hub</title>
+  <meta name="description" content="Curated Home Organization, Room Checklists, and DIY Tutorials.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://annadeco.github.io/">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+
+    /* --- Embedded Responsive CSS Fallback (Offline Guaranteed) --- */
+    :root {
+      --pseo-bg: #FFFDF9;
+      --pseo-text: #18181B;
+      --pseo-accent: #BE123C;
+      --pseo-accent-hover: #9F1239;
+      --pseo-card-bg: #FFFFFF;
+      --pseo-card-border: #F3E8E2;
+      --pseo-checkbox-bg: #FCE7F3;
+      --pseo-badge-bg: #BE123C;
+      --pseo-font-headline: 'Playfair Display', Georgia, serif;
+      --pseo-font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--pseo-bg);
+      color: var(--pseo-text);
+      font-family: var(--pseo-font-body);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    h1, h2, h3, h4, .font-serif-editorial {
+      font-family: var(--pseo-font-headline);
+      color: var(--pseo-text);
+      line-height: 1.25;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .pseo-container {
+      width: 100%;
+      max-width: 1152px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    .pseo-header {
+      background-color: #FFFFFF;
+      border-bottom: 1px solid var(--pseo-card-border);
+      padding: 0.75rem 0;
+    }
+
+    .pseo-main {
+      flex: 1 0 auto;
+      padding-top: 2rem;
+      padding-bottom: 2.5rem;
+    }
+
+    .pseo-grid-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    @media (min-width: 1024px) {
+      .pseo-grid-layout {
+        grid-template-columns: 8fr 4fr;
+      }
+    }
+
+    .pseo-article-card {
+      background-color: var(--pseo-card-bg);
+      border: 1px solid var(--pseo-card-border);
+      border-radius: 1.5rem;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    }
+
+    .pseo-hero-media {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      background-color: #F5F5F4;
+      overflow: hidden;
+    }
+
+    .pseo-hero-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .pseo-hero-media:hover img {
+      transform: scale(1.03);
+    }
+
+    .pseo-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .pseo-article-body {
+      padding: 1.5rem;
+    }
+
+    @media (min-width: 640px) {
+      .pseo-article-body {
+        padding: 2.5rem;
+      }
+    }
+
+    .pseo-btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background-color: var(--pseo-accent);
+      color: #FFFFFF !important;
+      font-weight: 700;
+      font-size: 0.875rem;
+      padding: 0.875rem 1.5rem;
+      border-radius: 0.75rem;
+      transition: background-color 0.2s ease, transform 0.1s ease;
+      cursor: pointer;
+    }
+
+    .pseo-btn-primary:hover {
+      background-color: var(--pseo-accent-hover);
+      transform: translateY(-1px);
+    }
+
+    .pseo-takeaways-card {
+      background-color: var(--pseo-card-bg);
+      border: 1px solid var(--pseo-card-border);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .pseo-checklist-container {
+      background-color: var(--pseo-checkbox-bg);
+      border: 1px solid var(--pseo-card-border);
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+    }
+
+    .pseo-checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.625rem;
+      padding: 0.5rem;
+      border-radius: 0.5rem;
+      transition: background-color 0.15s ease;
+      cursor: pointer;
+    }
+
+    .pseo-checklist-item:hover {
+      background-color: rgba(0, 0, 0, 0.04);
+    }
+
+    .pseo-checklist-item.completed .checklist-label {
+      text-decoration: line-through;
+      color: #A8A29E;
+    }
+
+    .pseo-related-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .pseo-related-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .pseo-card {
+      background-color: var(--pseo-card-bg);
+      border: 1px solid var(--pseo-card-border);
+      border-radius: 1rem;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+    }
+
+    .pseo-card:hover {
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
+      transform: translateY(-2px);
+    }
+
+    .pseo-pills-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      overflow-x: auto;
+      padding: 0.25rem 0;
+      scrollbar-width: none;
+    }
+    .pseo-pills-bar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .pseo-pill {
+      display: inline-block;
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      background-color: #F5F5F4;
+      color: #44403C;
+      white-space: nowrap;
+      transition: background-color 0.15s ease, color 0.15s ease;
+    }
+
+    .pseo-pill:hover {
+      background-color: #E7E5E4;
+      color: #1C1917;
+    }
+
+    .pseo-footer {
+      background-color: #FFFFFF;
+      border-top: 1px solid var(--pseo-card-border);
+      padding: 2rem 0;
+      margin-top: auto;
+      text-align: center;
+      font-size: 0.875rem;
+      color: #78716C;
+    }
+    
+  </style>
+</head>
+<body>
+  <header style="background-color: #FFFFFF; border-bottom: 1px solid var(--pseo-card-border); padding: 2.5rem 0;">
+    <div class="pseo-container">
+      <div style="display: flex; flex-direction: column; gap: 1rem;">
+        <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem;">
+          <div>
+            <span style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #A8A29E; display: block; margin-bottom: 0.25rem;">GitHub Pages Production Hub</span>
+            <h1 class="font-serif-editorial text-3xl sm:text-4xl font-bold text-stone-900">Annadeco Editorial Hub</h1>
+            <p class="text-sm text-stone-600 mt-1">Curated Home Organization, Room Checklists, and DIY Tutorials.</p>
+          </div>
+          <a href="https://https://asqstyle.com/" target="_blank" rel="noopener" class="pseo-btn-primary" style="align-self: flex-start;">
+            <span>Visit https://asqstyle.com</span>
+            <span>→</span>
+          </a>
+        </div>
+        <div class="pseo-pills-bar" style="margin-top: 0.5rem;"><span style="font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #A8A29E; margin-right: 0.25rem; flex-shrink: 0;">Explore Categories:</span><a href="https://annadeco.github.io/bedroom-inspo/" class="pseo-pill">Bedroom Inspo</a><a href="https://annadeco.github.io/fire-pits/" class="pseo-pill">Fire Pits</a><a href="https://annadeco.github.io/patio-design/" class="pseo-pill">Patio Design</a><a href="https://annadeco.github.io/backyard-ideas/" class="pseo-pill">Backyard Ideas</a><a href="https://annadeco.github.io/gazebos-pergola/" class="pseo-pill">Gazebos Pergola</a><a href="https://annadeco.github.io/landscaping-ides/" class="pseo-pill">Landscaping Ideas</a><a href="https://annadeco.github.io/landscaping-ideas1/" class="pseo-pill">Landscaping Ideas1</a><a href="https://annadeco.github.io/pool1/" class="pseo-pill">Pool1</a></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="pseo-container pseo-main">
+    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem;">
+      <h2 class="font-serif-editorial text-xl font-bold text-stone-900">All Published Guides (52)</h2>
+      <span class="text-xs text-stone-500 font-medium">Updated Regularly</span>
+    </div>
+
+    <div class="pseo-related-grid">
+      
+        <article class="pseo-card group">
+          <a href="https://annadeco.github.io/25-kids-bedroom-ideas-creative-themes-to-inspire-joy/" style="display: flex; flex-direction: column; height: 100%;">
+            <div class="pseo-hero-media">
+              <img src="https://annadeco.github.io/assets/images/25-kids-bedroom-ideas-creative-themes-to-inspire-joy.jpg" alt="25 Kids Bedroom Ideas: Creative Themes to Inspire Joy" loading="lazy" onerror="this.onerror=null; this.src='https://annadeco.github.io/assets/images/25-kids-bedroom-ideas-creative-themes-to-inspire-joy.svg';">
+              <span class="pseo-badge" style="position: absolute; top: 0.75rem; left: 0.75rem; background-color: rgba(255, 255, 255, 0.95); color: #1C1917; font-size: 0.625rem;">
+                Bedroom Inspo
+              </span>
+            </div>
+            <div style="padding: 1.25rem; flex: 1 0 auto;">
+              <div style="font-family: monospace; font-size: 0.7rem; color: #A8A29E; margin-bottom: 0.25rem;">/25-kids-bedroom-ideas-creative-themes-to-inspire-joy/</div>
+              <h2 class="font-serif-editorial text-lg font-bold text-stone-900 group-hover:text-[#BE123C]" style="margin-bottom: 0.5rem; transition: color 0.15s ease;">
+                25 Kids Bedroom Ideas: Creative Themes to Inspire Joy
+              </h2>
+              <p class="text-xs text-stone-500" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                Looking for kids bedroom ideas? Create a fun and functional space with colorful decor and versatile furniture options. I...
+              </p>
+            </div>
+            <div style="padding: 0.75rem 1.25rem; background-color: #FAFAFA; border-top: 1px solid var(--pseo-card-border); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; font-weight: 500; color: #78716C;">
+              <span>Read Guide</span>
+              <span style="color: #BE123C; font-weight: 700;">→</span>
+            </div>
+          </a>
+        </article>
+        
+        <article class="pseo-card group">
+          <a href="https://annadeco.github.io/20-modern-bedroom-ideas-transform-your-space-with-style/" style="display: flex; flex-direction: column; height: 100%;">
+            <div class="pseo-hero-media">
+              <img src="https://annadeco.github.io/assets/images/20-modern-bedroom-ideas-transform-your-space-with-style.jpg" alt="20 Modern Bedroom Ideas: Transform Your Space with Style" loading="lazy" onerror="this.onerror=null; this.src='https://annadeco.github.io/assets/images/20-modern-bedroom-ideas-transform-your-space-with-style.svg';">
+              <span class="pseo-badge" style="position: absolute; top: 0.75rem; left: 0.75rem; background-color: rgba(255, 255, 255, 0.95); color: #1C1917; font-size: 0.625rem;">
+                Bedroom Inspo
+              </span>
+            </div>
+            <div style="padding: 1.25rem; flex: 1 0 auto;">
+              <div style="font-family: monospace; font-size: 0.7rem; color: #A8A29E; margin-bottom: 0.25rem;">/20-modern-bedroom-ideas-transform-your-space-with-style/</div>
+              <h2 class="font-serif-editorial text-lg font-bold text-stone-900 group-hover:text-[#BE123C]" style="margin-bottom: 0.5rem; transition: color 0.15s ease;">
+                20 Modern Bedroom Ideas: Transform Your Space with Style
+              </h2>
+              <p class="text-xs text-stone-500" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                Transform your bedroom with modern ideas such as sleek furniture, minimalist design, and cozy lighting. These elements c...
+              </p>
+            </div>
+            <div style="padding: 0.75rem 1.25rem; background-color: #FAFAFA; border-top: 1px solid var(--pseo-card-border); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; font-weight: 500; color: #78716C;">
+              <span>Read Guide</span>
+              <span style="color: #BE123C; font-weight: 700;">→</span>
+            </div>
+          </a>
+        </article>
+        
+        <article class="pseo-card group">
+          <a href="https://annadeco.github.io/12-best-in-ground-fire-pit-ideas-to-warm-you-up-on-chilly-nights/" style="display: flex; flex-direction: column; height: 100%;">
+            <div class="pseo-hero-media">
+              <img src="https://annadeco.github.io/assets/images/12-best-in-ground-fire-pit-ideas-to-warm-you-up-on-chilly-nights.webp" alt="12 Best In-Ground Fire Pit Ideas to Warm You Up On Chilly Nights" loading="lazy" onerror="this.onerror=null; this.src='https://annadeco.github.io/assets/images/12-best-in-ground-fire-pit-ideas-to-warm-you-up-on-chilly-nights.svg';">
+              <span class="pseo-badge" style="position: absolute; top: 0.75rem; left: 0.75rem; background-color: rgba(255, 255, 255, 0.95); color: #1C1917; font-size: 0.625rem;">
+                Fire Pits
+              </span>
+            </div>
+            <div style="padding: 1.25rem; flex: 1 0 auto;">
+              <div style="font-family: monospace; font-size: 0.7rem; color: #A8A29E; margin-bottom: 0.25rem;">/12-best-in-ground-fire-pit-ideas-to-warm-you-up-on-chilly-nights/</div>
+              <h2 class="font-serif-editorial text-lg font-bold text-stone-900 group-hover:text-[#BE123C]" style="margin-bottom: 0.5rem; transition: color 0.15s ease;">
+                12 Best In-Ground Fire Pit Ideas to Warm You Up On Chilly Nights
+              </h2>
+              <p class="text-xs text-stone-500" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                The joy of sitting around a fire with friends and family is an experience people won’t soon forget. There’s just somethi...
+              </p>
+            </div>
+            <div style="padding: 0.75rem 1.25rem; background-color: #FAFAFA; border-top: 1px solid var(--pseo-card-border); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; font-weight: 500; color: #78716C;">
+              <span>Read Guide</span>
+              <span style="color: #BE123C; font-weight: 700;">→</span>
+            </div>
+          </a>
+        </article>
+        
+        <article class="pseo-card group">
+          <a href="https://annadeco.github.io/18-guest-bedroom-ideas-transform-your-space-with-style/" style="display: flex; flex-direction: column; height: 100%;">
+            <div class="pseo-hero-media">
+              <img src="https://annadeco.github.io/assets/images/18-guest-bedroom-ideas-transform-your-space-with-style.jpg" alt="18 Guest Bedroom Ideas: Transform Your Space with Style!" loading="lazy" onerror="this.onerror=null; this.src='https://annadeco.github.io/assets/images/18-guest-bedroom-ideas-transform-your-space-with-style.svg';">
+              <span class="pseo-badge" style="position: absolute; top: 0.75rem; left: 0.75rem; background-color: rgba(255, 255, 255, 0.95); color: #1C1917; font-size: 0.625rem;">
+                Bedroom Inspo
+              </span>
+            </div>
+            <div style="padding: 1.25rem; flex: 1 0 auto;">
+              <div style="font-family: monospace; font-size: 0.7rem; color: #A8A29E; margin-bottom: 0.25rem;">/18-guest-bedroom-ideas-transform-your-space-with-style/</div>
+              <h2 class="font-serif-editorial text-lg font-bold text-stone-900 group-hover:text-[#BE123C]" style="margin-bottom: 0.5rem; transition: color 0.15s ease;">
+                18 Guest Bedroom Ideas: Transform Your Space with Style!
+              </h2>
+              <p class="text-xs text-stone-500" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                Looking to spruce up your guest bedroom? Consider adding cozy bedding, a bedside table, and personal touches. Create a w...
+              </p>
+            </div>
+            <div style="padding: 0.75rem 1.25rem; background-color: #FAFAFA; border-top: 1px solid var(--pseo-card-border); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; font-weight: 500; color: #78716C;">
+              <span>Read Guide</span>
+              <span style="color: #BE123C; font-weight: 700;">→</span>
+            </div>
+          </a>
+        </article>
+        
+        <article class="pseo-card group">
+          <a href="https://annadeco.github.io/22-small-bedroom-ideas-for-couples-maximize-your-sanctuary/" style="display: flex; flex-direction: column; height: 100%;">
+            <div class="pseo-hero-media">
+              <img src="https://annadeco.github.io/assets/images/22-small-bedroom-ideas-for-couples-maximize-your-sanctuary.jpg" alt="22 Small Bedroom Ideas for Couples: Maximize Your Sanctuary" loading="lazy" onerror="this.onerror=null; this.src='https://annadeco.github.io/assets/images/22-small-bedroom-ideas-for-couples-maximize-your-sanctuary.svg';">
+              <span class="pseo-badge" style="position: absolute; top: 0.75rem; left: 0.75rem; background-color: rgba(255, 255, 255, 0.95); color: #1C1917; font-size: 0.625rem;">
+                Bedroom Inspo
+              </span>
+            </div>
+            <div style="padding: 1.25rem; flex: 1 0 auto;">
+              <div style="font-family: monospace; font-size: 0.7rem; color: #A8A29E; margin-bottom: 0.25rem;">/22-small-bedroom-ideas-for-couples-maximize-your-sanctuary/</div>
+              <h2 class="font-serif-editorial text-lg font-bold text-stone-900 group-hover:text-[#BE123C]" style="margin-bottom: 0.5rem; transition: color 0.15s ease;">
+                22 Small Bedroom Ideas for Couples: Maximize Your Sanctuary
+              </h2>
+              <p class="text-xs text-stone-500" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                For small bedroom ideas for couples, consider using multi-functional furniture and optimizing storage space. Add persona...
+              </p>
+            </div>
+            <div style="padding: 0.75rem 1.25rem; background-color: #FAFAFA; border-top: 1px solid var(--pseo-card-border); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; font-weight: 500; color: #78716C;">
+              <span>Read Guide</span>
+              <span style="color: #BE123C; font-weight: 700;">→</span>
+            </div>
+          </a>
+        </article>
+        
+        <article class="pseo-card group">
+          <a href="https://annadeco.github.io/15-home-bedroom-refresh-ideas-transform-your-oasis/" style="display: flex; flex-direction: column; height: 100%;">
+            <div class="pseo-hero-media">
+              <img src="https://annadeco.github.io/assets/images/15-home-bedroom-refresh-ideas-transform-your-oasis.jpg" alt="15 Home Bedroom Refresh Ideas: Transform Your Oasis!" loading="lazy" onerror="this.onerror=null; this.src='https://annadeco.github.io/assets/images/15-home-bedroom-refresh-ideas-transform-your-oasis.svg';">
+              <span class="pseo-badge" style="position: absolute; top: 0.75rem; left: 0.75rem; background-color: rgba(255, 255, 255, 0.95); color: #1C1917; font-size: 0.625rem;">
+                Bedroom Inspo
+              </span>
+            </div>
+            <div style="padding: 1.25rem; flex: 1 0 auto;">
+              <div style="font-family: monospace; font-size: 0.7rem; color: #A8A29E; margin-bottom: 0.25rem;">/15-home-bedroom-refresh-ideas-transform-your-oasis/</div>
+              <h2 class="font-serif-editorial text-lg font-bold text-stone-900 group-hover:text-[#BE123C]" style="margin-bottom: 0.5rem; transition: color 0.15s ease;">
+                15 Home Bedroom Refresh Ideas: Transform Your Oasis!
+              </h2>
+              <p class="text-xs text-stone-500" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                Elevate your bedroom with simple updates like new bedding, artwork, and decorative pillows. Incorporate fresh colors and...
+              </p>
+            </div>
+            <div style="padding: 0.75rem 1.25rem; background-color: #FAFAFA; border-top: 1px solid var(--pseo-card-border); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; font-weight: 500; color: #78716C;">
+              <span>Read Guide</span>
+              <span style="color: #BE123C; font-weight: 700;">→</span>
+            </div>
+          </a>
+        </article>
+        
+        <article class="pseo-card group">
+          <a href="https://annadeco.github.io/29-gorgeous-paver-patio-ideas-images-to-spark-new-designs-for-your-back-patio/" style="display: flex; flex-direction: column; height: 100%;">
+            <div class="pseo-hero-media">
+              <img src="https://annadeco.github.io/assets/images/29-gorgeous-paver-patio-ideas-images-to-spark-new-designs-for-your-back-patio.webp" alt="29 Gorgeous Paver Patio Ideas: Images to Spark New Designs for Your Back Patio" loading="lazy" onerror="this.onerror=null; this.src='https://annadeco.github.io/assets/images/29-gorgeous-paver-patio-ideas-images-to-spark-new-designs-for-your-back-patio.svg';">
+              <span class="pseo-badge" style="position: absolute; top: 0.75rem; left: 0.75rem; background-color: rgba(255, 255, 255, 0.95); color: #1C1917; font-size: 0.625rem;">
+                Patio Design
+              </span>
+            </div>
+            <div style="padding: 1.25rem; flex: 1 0 auto;">
+              <div style="font-family: monospace; font-size: 0.7rem; color: #A8A29E; margin-bottom: 0.25rem;">/29-gorgeous-paver-patio-ideas-images-to-spark-new-designs-for-your-back-patio/</div>
+              <h2 class="font-serif-editorial text-lg font-bold text-stone-900 group-hover:text-[#BE123C]" style="margin-bottom: 0.5rem; transition: color 0.15s ease;">
+                29 Gorgeous Paver Patio Ideas: Images to Spark New Designs for Your Back Patio
+              </h2>
+              <p class="text-xs text-stone-500" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                Spending time outdoors in beautiful weather is one of the true joys of life, especially when it’s right outside your hom...
+              </p>
+            </div>
+            <div style="padding: 0.75rem 1.25rem; background-color: #FAFAFA; border-top: 1px solid var(--pseo-card-border); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; font-weight: 500; color: #78716C;">
+              <span>Read Guide</span>
+              <span style="color: #BE123C; font-weight: 700;">→</span>
+            </div>
+          </a>
+        </article>
+        
+        <article class="pseo-card group">
+          <a href="https://annadeco.github.io/30-moody-romantic-bedroom-ideas-enchanting-nights-await/" style="display: flex; flex-direction: column; height: 100%;">
+            <div class="pseo-hero-media">
+              <img src="https://annadeco.github.io/assets/images/30-moody-romantic-bedroom-ideas-enchanting-nights-await.jpg" alt="30 Moody Romantic Bedroom Ideas: Enchanting Nights Await" loading="lazy" onerror="this.onerror=null; this.src='https://annadeco.github.io/assets/images/30-moody-romantic-bedroom-ideas-enchanting-nights-await.svg';">
+              <span class="pseo-badge" style="position: absolute; top: 0.75rem; left: 0.75rem; background-color: rgba(255, 255, 255, 0.95); color: #1C1917; font-size: 0.625rem;">
+                Bedroom Inspo
+              </span>
+            </div>
+            <div style="padding: 1.25rem; flex: 1 0 auto;">
+              <div style="font-family: monospace; font-size: 0.7rem; color: #A8A29E; margin-bottom: 0.25rem;">/30-moody-romantic-bedroom-ideas-enchanting-nights-await/</div>
+              <h2 class="font-serif-editorial text-lg font-bold text-stone-900 group-hover:text-[#BE123C]" style="margin-bottom: 0.5rem; transition: color 0.15s ease;">
+                30 Moody Romantic Bedroom Ideas: Enchanting Nights Await
+              </h2>
+              <p class="text-xs text-stone-500" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                Create a moody romantic bedroom with dim lighting, luxurious fabrics, and deep, rich color schemes. Incorporate plush te...
+              </p>
+            </div>
+            <div style="padding: 0.75rem 1.25rem; background-color: #FAFAFA; border-top: 1px solid var(--pseo-card-border); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; font-weight: 500; color: #78716C;">
+              <span>Read Guide</span>
+              <span style="color: #BE123C; font-weight: 700;">→</span>
+            </div>
+          </a>
+        </article>
+        
+        <article class="pseo-card group">
+          <a href="https://annadeco.github.io/35-teenage-girl-bedroom-ideas-chic-dreamy-makeovers/" style="display: flex; flex-direction: column; height: 100%;">
+            <div class="pseo-hero-media">
+              <img src="https://annadeco.github.io/assets/images/35-teenage-girl-bedroom-ideas-chic-dreamy-makeovers.jpg" alt="35 Teenage Girl Bedroom Ideas : Chic &amp; Dreamy Makeovers!" loading="lazy" onerror="this.onerror=null; this.src='https://annadeco.github.io/assets/images/35-teenage-girl-bedroom-ideas-chic-dreamy-makeovers.svg';">
+              <span class="pseo-badge" style="position: absolute; top: 0.75rem; left: 0.75rem; background-color: rgba(255, 255, 255, 0.95); color: #1C1917; font-size: 0.625rem;">
+                Bedroom Inspo
+              </span>
+            </div>
+            <div style="padding: 1.25rem; flex: 1 0 auto;">
+              <div style="font-family: monospace; font-size: 0.7rem; color: #A8A29E; margin-bottom: 0.25rem;">/35-teenage-girl-bedroom-ideas-chic-dreamy-makeovers/</div>
+              <h2 class="font-serif-editorial text-lg font-bold text-stone-900 group-hover:text-[#BE123C]" style="margin-bottom: 0.5rem; transition: color 0.15s ease;">
+                35 Teenage Girl Bedroom Ideas : Chic &amp; Dreamy Makeovers!
+              </h2>
+              <p class="text-xs text-stone-500" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                Teenage girl bedroom ideas should focus on creating a stylish and functional space that reflects their personality and i...
+              </p>
+            </div>
+            <div style="padding: 0.75rem 1.25rem; background-color: #FAFAFA; border-top: 1px solid var(--pseo-card-border); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; font-weight: 500; color: #78716C;">
+              <span>Read Guide</span>
+              <span style="color: #BE123C; font-weight: 700;">→</span>
+            </div>
+          </a>
+        </article>
+        
+        <article class="pseo-card group">
+          <a href="https://annadeco.github.io/9-magical-whimsy-goth-bedroom-ideas-to-transform-your-space/" style="display: flex; flex-direction: column; height: 100%;">
+            <div class="pseo-hero-media">
+              <img src="https://annadeco.github.io/assets/images/9-magical-whimsy-goth-bedroom-ideas-to-transform-your-space.jpg" alt="9 Magical Whimsy Goth Bedroom Ideas To Transform Your Space" loading="lazy" onerror="this.onerror=null; this.src='https://annadeco.github.io/assets/images/9-magical-whimsy-goth-bedroom-ideas-to-transform-your-space.svg';">
+              <span class="pseo-badge" style="position: absolute; top: 0.75rem; left: 0.75rem; background-color: rgba(255, 255, 255, 0.95); color: #1C1917; font-size: 0.625rem;">
+                Bedroom Inspo
+              </span>
+            </div>
+            <div style="padding: 1.25rem; flex: 1 0 auto;">
+              <div style="font-family: monospace; font-size: 0.7rem; color: #A8A29E; margin-bottom: 0.25rem;">/9-magical-whimsy-goth-bedroom-ideas-to-transform-your-space/</div>
+              <h2 class="font-serif-editorial text-lg font-bold text-stone-900 group-hover:text-[#BE123C]" style="margin-bottom: 0.5rem; transition: color 0.15s ease;">
+                9 Magical Whimsy Goth Bedroom Ideas To Transform Your Space
+              </h2>
+              <p class="text-xs text-stone-500" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                Welcome to the world of whimsy goth bedrooms! These spaces blend dark, gothic elements with whimsical touches. They crea...
+              </p>
+            </div>
+            <div style="padding: 0.75rem 1.25rem; background-color: #FAFAFA; border-top: 1px solid var(--pseo-card-border); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; font-weight: 500; color: #78716C;">
+              <span>Read Guide</span>
+              <span style="color: #BE123C; font-weight: 700;">→</span>
+            </div>
+          </a>
+        </article>
+        
+        <article class="pseo-card group">
+          <a href="https://annadeco.github.io/16-coastal-bedroom-decor-essentials-transform-your-space/" style="display: flex; flex-direction: column; height: 100%;">
+            <div class="pseo-hero-media">
+              <img src="https://annadeco.github.io/assets/images/16-coastal-bedroom-decor-essentials-transform-your-space.jpg" alt="16 Coastal Bedroom Decor Essentials: Transform Your Space" loading="lazy" onerror="this.onerror=null; this.src='https://annadeco.github.io/assets/images/16-coastal-bedroom-decor-essentials-transform-your-space.svg';">
+              <span class="pseo-badge" style="position: absolute; top: 0.75rem; left: 0.75rem; background-color: rgba(255, 255, 255, 0.95); color: #1C1917; font-size: 0.625rem;">
+                Bedroom Inspo
+              </span>
+            </div>
+            <div style="padding: 1.25rem; flex: 1 0 auto;">
+              <div style="font-family: monospace; font-size: 0.7rem; color: #A8A29E; margin-bottom: 0.25rem;">/16-coastal-bedroom-decor-essentials-transform-your-space/</div>
+              <h2 class="font-serif-editorial text-lg font-bold text-stone-900 group-hover:text-[#BE123C]" style="margin-bottom: 0.5rem; transition: color 0.15s ease;">
+                16 Coastal Bedroom Decor Essentials: Transform Your Space
+              </h2>
+              <p class="text-xs text-stone-500" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                Do you love the beach and the ocean? Do you want to bring that feeling into your home? Coastal bedroom decor can help yo...
+              </p>
+            </div>
+            <div style="padding: 0.75rem 1.25rem; background-color: #FAFAFA; border-top: 1px solid var(--pseo-card-border); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; font-weight: 500; color: #78716C;">
+              <span>Read Guide</span>
+              <span style="color: #BE123C; font-weight: 700;">→</span>
+            </div>
+          </a>
+        </article>
+        
+        <article class="pseo-card group">
+          <a href="https://annadeco.github.io/40-ikea-teenage-girl-bedroom-ideas-chic-trendy-makeovers-updated/" style="display: flex; flex-direction: column; height: 100%;">
+            <div class="pseo-hero-media">
+              <img src="https://annadeco.github.io/assets/images/40-ikea-teenage-girl-bedroom-ideas-chic-trendy-makeovers-updated.jpg" alt="40 Ikea Teenage Girl Bedroom Ideas: Chic &amp; Trendy Makeovers! (Updated)" loading="lazy" onerror="this.onerror=null; this.src='https://annadeco.github.io/assets/images/40-ikea-teenage-girl-bedroom-ideas-chic-trendy-makeovers-updated.svg';">
+              <span class="pseo-badge" style="position: absolute; top: 0.75rem; left: 0.75rem; background-color: rgba(255, 255, 255, 0.95); color: #1C1917; font-size: 0.625rem;">
+                Bedroom Inspo
+              </span>
+            </div>
+            <div style="padding: 1.25rem; flex: 1 0 auto;">
+              <div style="font-family: monospace; font-size: 0.7rem; color: #A8A29E; margin-bottom: 0.25rem;">/40-ikea-teenage-girl-bedroom-ideas-chic-trendy-makeovers-updated/</div>
+              <h2 class="font-serif-editorial text-lg font-bold text-stone-900 group-hover:text-[#BE123C]" style="margin-bottom: 0.5rem; transition: color 0.15s ease;">
+                40 Ikea Teenage Girl Bedroom Ideas: Chic &amp; Trendy Makeovers! (Updated)
+              </h2>
+              <p class="text-xs text-stone-500" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                Transforming a teenage girl’s bedroom can be exciting. Ikea offers many creative ideas. Let’s explore some fantastic opt...
+              </p>
+            </div>
+            <div style="padding: 0.75rem 1.25rem; background-color: #FAFAFA; border-top: 1px solid var(--pseo-card-border); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; font-weight: 500; color: #78716C;">
+              <span>Read Guide</span>
+              <span style="color: #BE123C; font-weight: 700;">→</span>
+            </div>
+          </a>
+        </article>
+        
+        <article class="pseo-card group">
+          <a href="https://annadeco.github.io/how-to-get-rid-of-possums-in-your-backyard-and-save-your-garden/" style="display: flex; flex-direction: column; height: 100%;">
+            <div class="pseo-hero-media">
+              <img src="https://annadeco.github.io/assets/images/how-to-get-rid-of-possums-in-your-backyard-and-save-your-garden.webp" alt="How to Get Rid of Possums in Your Backyard and Save Your Garden" loading="lazy" onerror="this.onerror=null; this.src='https://annadeco.github.io/assets/images/how-to-get-rid-of-possums-in-your-backyard-and-save-your-garden.svg';">
+              <span class="pseo-badge" style="position: absolute; top: 0.75rem; left: 0.75rem; background-color: rgba(255, 255, 255, 0.95); color: #1C1917; font-size: 0.625rem;">
+                Backyard Ideas
+              </span>
+            </div>
+            <div style="padding: 1.25rem; flex: 1 0 auto;">
+              <div style="font-family: monospace; font-size: 0.7rem; color: #A8A29E; margin-bottom: 0.25rem;">/how-to-get-rid-of-possums-in-your-backyard-and-save-your-garden/</div>
+              <h2 class="font-serif-editorial text-lg font-bold text-stone-900 group-hover:text-[#BE123C]" style="margin-bottom: 0.5rem; transition: color 0.15s ease;">
+                How to Get Rid of Possums in Your Backyard and Save Your Garden
+              </h2>
+              <p class="text-xs text-stone-500" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                These animals are an anomaly in so many ways. They are the only native marsupial species in the country, they have the m...
+              </p>
+            </div>
+            <div style="padding: 0.75rem 1.25rem; background-color: #FAFAFA; border-top: 1px solid var(--pseo-card-border); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; font-weight: 500; color: #78716C;">
+              <span>Read Guide</span>
+              <span style="color: #BE123C; font-weight: 700;">→</span>
+            </div>
+          </a>
+        </article>
+        
+        <article class="pseo-card group">
+          <a href="https://annadeco.github.io/26-cozy-christmas-decor-ideas-for-your-bedroom/" style="display: flex; flex-direction: column; height: 100%;">
+            <div class="pseo-hero-media">
+              <img src="https://annadeco.github.io/assets/images/26-cozy-christmas-decor-ideas-for-your-bedroom.jpg" alt="26 Cozy Christmas Decor Ideas for Your Bedroom" loading="lazy" onerror="this.onerror=null; this.src='https://annadeco.github.io/assets/images/26-cozy-christmas-decor-ideas-for-your-bedroom.svg';">
+              <span class="pseo-badge" style="position: absolute; top: 0.75rem; left: 0.75rem; background-color: rgba(255, 255, 255, 0.95); color: #1C1917; font-size: 0.625rem;">
+                Bedroom Inspo
+              </span>
+            </div>
+            <div style="padding: 1.25rem; flex: 1 0 auto;">
+              <div style="font-family: monospace; font-size: 0.7rem; color: #A8A29E; margin-bottom: 0.25rem;">/26-cozy-christmas-decor-ideas-for-your-bedroom/</div>
+              <h2 class="font-serif-editorial text-lg font-bold text-stone-900 group-hover:text-[#BE123C]" style="margin-bottom: 0.5rem; transition: color 0.15s ease;">
+                26 Cozy Christmas Decor Ideas for Your Bedroom
+              </h2>
+              <p class="text-xs text-stone-500" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                Turn your bedroom into a winter wonderland with these festive Christmas decor ideas! From twinkling lights to cozy holid...
+              </p>
+            </div>
+            <div style="padding: 0.75rem 1.25rem; background-color: #FAFAFA; border-top: 1px solid var(--pseo-card-border); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; font-weight: 500; color: #78716C;">
+              <span>Read Guide</span>
+              <span style="color: #BE123C; font-weight: 700;">→</span>
+            </div>
+          </a>
+        </article>
+        
+        <article class="pseo-card group">
+          <a href="https://annadeco.github.io/romantic-bedroom-ideas-transform-your-space-with-love/" style="display: flex; flex-direction: column; height: 100%;">
+            <div class="pseo-hero-media">
+              <img src="https://annadeco.github.io/assets/images/romantic-bedroom-ideas-transform-your-space-with-love.png" alt="Romantic Bedroom Ideas: Transform Your Space with Love" loading="lazy" onerror="this.onerror=null; this.src='https://annadeco.github.io/assets/images/romantic-bedroom-ideas-transform-your-space-with-love.svg';">
+              <span class="pseo-badge" style="position: absolute; top: 0.75rem; left: 0.75rem; background-color: rgba(255, 255, 255, 0.95); color: #1C1917; font-size: 0.625rem;">
+                Bedroom Inspo
+              </span>
+            </div>
+            <div style="padding: 1.25rem; flex: 1 0 auto;">
+              <div style="font-family: monospace; font-size: 0.7rem; color: #A8A29E; margin-bottom: 0.25rem;">/romantic-bedroom-ideas-transform-your-space-with-love/</div>
+              <h2 class="font-serif-editorial text-lg font-bold text-stone-900 group-hover:text-[#BE123C]" style="margin-bottom: 0.5rem; transition: color 0.15s ease;">
+                Romantic Bedroom Ideas: Transform Your Space with Love
+              </h2>
+              <p class="text-xs text-stone-500" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                Creating a romantic bedroom can bring warmth and intimacy to your home. This space can be a sanctuary for you and your p...
+              </p>
+            </div>
+            <div style="padding: 0.75rem 1.25rem; background-color: #FAFAFA; border-top: 1px solid var(--pseo-card-border); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; font-weight: 500; color: #78716C;">
+              <span>Read Guide</span>
+              <span style="color: #BE123C; font-weight: 700;">→</span>
+            </div>
+          </a>
+        </article>
+        
+        <article class="pseo-card group">
+          <a href="https://annadeco.github.io/19-valentines-day-bedroom-decor-ideas/" style="display: flex; flex-direction: column; height: 100%;">
+            <div class="pseo-hero-media">
+              <img src="https://annadeco.github.io/assets/images/19-valentines-day-bedroom-decor-ideas.svg" alt="19 Valentines Day bedroom decor ideas" loading="lazy" onerror="this.onerror=null; this.src='https://annadeco.github.io/assets/images/19-valentines-day-bedroom-decor-ideas.svg';">
+              <span class="pseo-badge" style="position: absolute; top: 0.75rem; left: 0.75rem; background-color: rgba(255, 255, 255, 0.95); color: #1C1917; font-size: 0.625rem;">
+                Bedroom Inspo
+              </span>
+            </div>
+            <div style="padding: 1.25rem; flex: 1 0 auto;">
+              <div style="font-family: monospace; font-size: 0.7rem; color: #A8A29E; margin-bottom: 0.25rem;">/19-valentines-day-bedroom-decor-ideas/</div>
+              <h2 class="font-serif-editorial text-lg font-bold text-stone-900 group-hover:text-[#BE123C]" style="margin-bottom: 0.5rem; transition: color 0.15s ease;">
+                19 Valentines Day bedroom decor ideas
+              </h2>
+              <p class="text-xs text-stone-500" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                The bedroom is a personal and intimate space where couples often share their most meaningful moments. For Valentine’s Da...
+              </p>
+            </div>
+            <div style="padding: 0.75rem 1.25rem; background-color: #FAFAFA; border-top: 1px solid var(--pseo-card-border); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; font-weight: 500; color: #78716C;">
+              <span>Read Guide</span>
+              <span style="color: #BE123C; font-weight: 700;">→</span>
+            </div>
+          </a>
+        </article>
+        
+        <article class="pseo-card group">
+          <a href="https://annadeco.github.io/19-best-cabana-ideas-for-your-backyard/" style="display: flex; flex-direction: column; height: 100%;">
+            <div class="pseo-hero-media">
+              <img src="https://annadeco.github.io/assets/images/19-best-cabana-ideas-for-your-backyard.webp" alt="19 Best Cabana Ideas for Your Backyard" loading="lazy" onerror="this.onerror=null; this.src='https://annadeco.github.io/assets/images/19-best-cabana-ideas-for-your-backyard.svg';">
+              <span class="pseo-badge" style="position: absolute; top: 0.75rem; left: 0.75rem; background-color: rgba(255, 255, 255, 0.95); color: #1C1917; font-size: 0.625rem;">
+                Backyard Ideas
+              </span>
+            </div>
+            <div style="padding: 1.25rem; flex: 1 0 auto;">
+              <div style="font-family: monospace; font-size: 0.7rem; color: #A8A29E; margin-bottom: 0.25rem;">/19-best-cabana-ideas-for-your-backyard/</div>
+              <h2 class="font-serif-editorial text-lg font-bold text-stone-900 group-hover:text-[#BE123C]" style="margin-bottom: 0.5rem; transition: color 0.15s ease;">
+                19 Best Cabana Ideas for Your Backyard
+              </h2>
+              <p class="text-xs text-stone-500" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                Few structures add flair to your house more than these backyard cabana ideas. Just imagine that open space you use to st...
+              </p>
+            </div>
+            <div style="padding: 0.75rem 1.25rem; background-color: #FAFAFA; border-top: 1px solid var(--pseo-card-border); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; font-weight: 500; color: #78716C;">
+              <span>Read Guide</span>
+              <span style="color: #BE123C; font-weight: 700;">→</span>
+            </div>
+          </a>
+        </article>
+        
+        <article class="pseo-card group">
+          <a href="https://annadeco.github.io/how-to-create-cozy-bedroom-atmosphere/" style="display: flex; flex-direction: column; height: 100%;">
+            <div class="pseo-hero-media">
+              <img src="https://annadeco.github.io/assets/images/how-to-create-cozy-bedroom-atmosphere.jpg" alt="How to Create Cozy Bedroom Atmosphere" loading="lazy" onerror="this.onerror=null; this.src='https://annadeco.github.io/assets/images/how-to-create-cozy-bedroom-atmosphere.svg';">
+              <span class="pseo-badge" style="position: absolute; top: 0.75rem; left: 0.75rem; background-color: rgba(255, 255, 255, 0.95); color: #1C1917; font-size: 0.625rem;">
+                Bedroom Inspo
+              </span>
+            </div>
+            <div style="padding: 1.25rem; flex: 1 0 auto;">
+              <div style="font-family: monospace; font-size: 0.7rem; color: #A8A29E; margin-bottom: 0.25rem;">/how-to-create-cozy-bedroom-atmosphere/</div>
+              <h2 class="font-serif-editorial text-lg font-bold text-stone-900 group-hover:text-[#BE123C]" style="margin-bottom: 0.5rem; transition: color 0.15s ease;">
+                How to Create Cozy Bedroom Atmosphere
+              </h2>
+              <p class="text-xs text-stone-500" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                A bedroom is more than just four walls and a bed—it’s where the day starts and ends, and honestly, it shapes our mood in...
+              </p>
+            </div>
+            <div style="padding: 0.75rem 1.25rem; background-color: #FAFAFA; border-top: 1px solid var(--pseo-card-border); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; font-weight: 500; color: #78716C;">
+              <span>Read Guide</span>
+              <span style="color: #BE123C; font-weight: 700;">→</span>
+            </div>
+          </a>
+        </article>
+        
+        <article class="pseo-card group">
+          <a href="https://annadeco.github.io/37-pergola-ideas-to-customize-your-yard/" style="display: flex; flex-direction: column; height: 100%;">
+            <div class="pseo-hero-media">
+              <img src="https://annadeco.github.io/assets/images/37-pergola-ideas-to-customize-your-yard.jpg" alt="37 Pergola Ideas to Customize Your Yard" loading="lazy" onerror="this.onerror=null; this.src='https://annadeco.github.io/assets/images/37-pergola-ideas-to-customize-your-yard.svg';">
+              <span class="pseo-badge" style="position: absolute; top: 0.75rem; left: 0.75rem; background-color: rgba(255, 255, 255, 0.95); color: #1C1917; font-size: 0.625rem;">
+                Gazebos Pergola
+              </span>
+            </div>
+            <div style="padding: 1.25rem; flex: 1 0 auto;">
+              <div style="font-family: monospace; font-size: 0.7rem; color: #A8A29E; margin-bottom: 0.25rem;">/37-pergola-ideas-to-customize-your-yard/</div>
+              <h2 class="font-serif-editorial text-lg font-bold text-stone-900 group-hover:text-[#BE123C]" style="margin-bottom: 0.5rem; transition: color 0.15s ease;">
+                37 Pergola Ideas to Customize Your Yard
+              </h2>
+              <p class="text-xs text-stone-500" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                Here are 37 pergola ideas to help with designing your custom outdoor space. The Latin word pergula means a projecting ea...
+              </p>
+            </div>
+            <div style="padding: 0.75rem 1.25rem; background-color: #FAFAFA; border-top: 1px solid var(--pseo-card-border); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; font-weight: 500; color: #78716C;">
+              <span>Read Guide</span>
+              <span style="color: #BE123C; font-weight: 700;">→</span>
+            </div>
+          </a>
+        </article>
+        
+        <article class="pseo-card group">
+          <a href="https://annadeco.github.io/15-concrete-patio-ideas-for-stunning-and-affordable-outdoor-spaces/" style="display: flex; flex-direction: column; height: 100%;">
+            <div class="pseo-hero-media">
+              <img src="https://annadeco.github.io/assets/images/15-concrete-patio-ideas-for-stunning-and-affordable-outdoor-spaces.jpg" alt="15 Concrete Patio Ideas for Stunning and Affordable Outdoor Spaces" loading="lazy" onerror="this.onerror=null; this.src='https://annadeco.github.io/assets/images/15-concrete-patio-ideas-for-stunning-and-affordable-outdoor-spaces.svg';">
+              <span class="pseo-badge" style="position: absolute; top: 0.75rem; left: 0.75rem; background-color: rgba(255, 255, 255, 0.95); color: #1C1917; font-size: 0.625rem;">
+                Patio Design
+              </span>
+            </div>
+            <div style="padding: 1.25rem; flex: 1 0 auto;">
+              <div style="font-family: monospace; font-size: 0.7rem; color: #A8A29E; margin-bottom: 0.25rem;">/15-concrete-patio-ideas-for-stunning-and-affordable-outdoor-spaces/</div>
+              <h2 class="font-serif-editorial text-lg font-bold text-stone-900 group-hover:text-[#BE123C]" style="margin-bottom: 0.5rem; transition: color 0.15s ease;">
+                15 Concrete Patio Ideas for Stunning and Affordable Outdoor Spaces
+              </h2>
+              <p class="text-xs text-stone-500" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                When I first started dreaming about redoing my backyard, I kept stumbling on one phrase over and over: concrete patio id...
+              </p>
+            </div>
+            <div style="padding: 0.75rem 1.25rem; background-color: #FAFAFA; border-top: 1px solid var(--pseo-card-border); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; font-weight: 500; color: #78716C;">
+              <span>Read Guide</span>
+              <span style="color: #BE123C; font-weight: 700;">→</span>
+            </div>
+          </a>
+        </article>
+        
+        <article class="pseo-card group">
+          <a href="https://annadeco.github.io/how-to-get-rid-of-prairie-dogs-in-your-backyard-and-save-your-lawn/" style="display: flex; flex-direction: column; height: 100%;">
+            <div class="pseo-hero-media">
+              <img src="https://annadeco.github.io/assets/images/how-to-get-rid-of-prairie-dogs-in-your-backyard-and-save-your-lawn.webp" alt="How to Get Rid of Prairie Dogs in Your Backyard and Save Your Lawn" loading="lazy" onerror="this.onerror=null; this.src='https://annadeco.github.io/assets/images/how-to-get-rid-of-prairie-dogs-in-your-backyard-and-save-your-lawn.svg';">
+              <span class="pseo-badge" style="position: absolute; top: 0.75rem; left: 0.75rem; background-color: rgba(255, 255, 255, 0.95); color: #1C1917; font-size: 0.625rem;">
+                Backyard Ideas
+              </span>
+            </div>
+            <div style="padding: 1.25rem; flex: 1 0 auto;">
+              <div style="font-family: monospace; font-size: 0.7rem; color: #A8A29E; margin-bottom: 0.25rem;">/how-to-get-rid-of-prairie-dogs-in-your-backyard-and-save-your-lawn/</div>
+              <h2 class="font-serif-editorial text-lg font-bold text-stone-900 group-hover:text-[#BE123C]" style="margin-bottom: 0.5rem; transition: color 0.15s ease;">
+                How to Get Rid of Prairie Dogs in Your Backyard and Save Your Lawn
+              </h2>
+              <p class="text-xs text-stone-500" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                Most people think of them as cute, especially when they get on their hind legs and bark, hence, their name. But if you l...
+              </p>
+            </div>
+            <div style="padding: 0.75rem 1.25rem; background-color: #FAFAFA; border-top: 1px solid var(--pseo-card-border); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; font-weight: 500; color: #78716C;">
+              <span>Read Guide</span>
+              <span style="color: #BE123C; font-weight: 700;">→</span>
+            </div>
+          </a>
+        </article>
+        
+        <article class="pseo-card group">
+          <a href="https://annadeco.github.io/21-garden-sculpture-ideas-to-enhance-your-backyard/" style="display: flex; flex-direction: column; height: 100%;">
+            <div class="pseo-hero-media">
+              <img src="https://annadeco.github.io/assets/images/21-garden-sculpture-ideas-to-enhance-your-backyard.webp" alt="21 Garden Sculpture Ideas to Enhance your Backyard" loading="lazy" onerror="this.onerror=null; this.src='https://annadeco.github.io/assets/images/21-garden-sculpture-ideas-to-enhance-your-backyard.svg';">
+              <span class="pseo-badge" style="position: absolute; top: 0.75rem; left: 0.75rem; background-color: rgba(255, 255, 255, 0.95); color: #1C1917; font-size: 0.625rem;">
+                Backyard Ideas
+              </span>
+            </div>
+            <div style="padding: 1.25rem; flex: 1 0 auto;">
+              <div style="font-family: monospace; font-size: 0.7rem; color: #A8A29E; margin-bottom: 0.25rem;">/21-garden-sculpture-ideas-to-enhance-your-backyard/</div>
+              <h2 class="font-serif-editorial text-lg font-bold text-stone-900 group-hover:text-[#BE123C]" style="margin-bottom: 0.5rem; transition: color 0.15s ease;">
+                21 Garden Sculpture Ideas to Enhance your Backyard
+              </h2>
+              <p class="text-xs text-stone-500" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                From their lively flowers and rich colors to their gravel walkways and hedge mazes, gardens are simply captivating. Thou...
+              </p>
+            </div>
+            <div style="padding: 0.75rem 1.25rem; background-color: #FAFAFA; border-top: 1px solid var(--pseo-card-border); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; font-weight: 500; color: #78716C;">
+              <span>Read Guide</span>
+              <span style="color: #BE123C; font-weight: 700;">→</span>
+            </div>
+          </a>
+        </article>
+        
+        <article class="pseo-card group">
+          <a href="https://annadeco.github.io/70-of-the-best-backyard-design-ideas/" style="display: flex; flex-direction: column; height: 100%;">
+            <div class="pseo-hero-media">
+              <img src="https://annadeco.github.io/assets/images/70-of-the-best-backyard-design-ideas.jpg" alt="70 of the Best Backyard Design Ideas" loading="lazy" onerror="this.onerror=null; this.src='https://annadeco.github.io/assets/images/70-of-the-best-backyard-design-ideas.svg';">
+              <span class="pseo-badge" style="position: absolute; top: 0.75rem; left: 0.75rem; background-color: rgba(255, 255, 255, 0.95); color: #1C1917; font-size: 0.625rem;">
+                Backyard Ideas
+              </span>
+            </div>
+            <div style="padding: 1.25rem; flex: 1 0 auto;">
+              <div style="font-family: monospace; font-size: 0.7rem; color: #A8A29E; margin-bottom: 0.25rem;">/70-of-the-best-backyard-design-ideas/</div>
+              <h2 class="font-serif-editorial text-lg font-bold text-stone-900 group-hover:text-[#BE123C]" style="margin-bottom: 0.5rem; transition: color 0.15s ease;">
+                70 of the Best Backyard Design Ideas
+              </h2>
+              <p class="text-xs text-stone-500" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                Your home is your sanctuary, and your backyard is one of the best places to kick your shoes off. Everyone wants their ya...
+              </p>
+            </div>
+            <div style="padding: 0.75rem 1.25rem; background-color: #FAFAFA; border-top: 1px solid var(--pseo-card-border); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; font-weight: 500; color: #78716C;">
+              <span>Read Guide</span>
+              <span style="color: #BE123C; font-weight: 700;">→</span>
+            </div>
+          </a>
+        </article>
+        
+        <article class="pseo-card group">
+          <a href="https://annadeco.github.io/landscaping-for-poor-drainage-identifying-problems/" style="display: flex; flex-direction: column; height: 100%;">
+            <div class="pseo-hero-media">
+              <img src="https://annadeco.github.io/assets/images/landscaping-for-poor-drainage-identifying-problems.webp" alt="Landscaping for Poor Drainage: Identifying Problems" loading="lazy" onerror="this.onerror=null; this.src='https://annadeco.github.io/assets/images/landscaping-for-poor-drainage-identifying-problems.svg';">
+              <span class="pseo-badge" style="position: absolute; top: 0.75rem; left: 0.75rem; background-color: rgba(255, 255, 255, 0.95); color: #1C1917; font-size: 0.625rem;">
+                Landscaping Ideas
+              </span>
+            </div>
+            <div style="padding: 1.25rem; flex: 1 0 auto;">
+              <div style="font-family: monospace; font-size: 0.7rem; color: #A8A29E; margin-bottom: 0.25rem;">/landscaping-for-poor-drainage-identifying-problems/</div>
+              <h2 class="font-serif-editorial text-lg font-bold text-stone-900 group-hover:text-[#BE123C]" style="margin-bottom: 0.5rem; transition: color 0.15s ease;">
+                Landscaping for Poor Drainage: Identifying Problems
+              </h2>
+              <p class="text-xs text-stone-500" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                Misery comes in all shapes and sizes, and discovering you have to deal with landscaping for poor drainage can provide th...
+              </p>
+            </div>
+            <div style="padding: 0.75rem 1.25rem; background-color: #FAFAFA; border-top: 1px solid var(--pseo-card-border); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; font-weight: 500; color: #78716C;">
+              <span>Read Guide</span>
+              <span style="color: #BE123C; font-weight: 700;">→</span>
+            </div>
+          </a>
+        </article>
+        
+        <article class="pseo-card group">
+          <a href="https://annadeco.github.io/is-it-a-requirement-to-apply-for-pergola-planning-permission-uk/" style="display: flex; flex-direction: column; height: 100%;">
+            <div class="pseo-hero-media">
+              <img src="https://annadeco.github.io/assets/images/is-it-a-requirement-to-apply-for-pergola-planning-permission-uk.png" alt="Is it a requirement to apply for pergola planning permission UK?" loading="lazy" onerror="this.onerror=null; this.src='https://annadeco.github.io/assets/images/is-it-a-requirement-to-apply-for-pergola-planning-permission-uk.svg';">
+              <span class="pseo-badge" style="position: absolute; top: 0.75rem; left: 0.75rem; background-color: rgba(255, 255, 255, 0.95); color: #1C1917; font-size: 0.625rem;">
+                Gazebos Pergola
+              </span>
+            </div>
+            <div style="padding: 1.25rem; flex: 1 0 auto;">
+              <div style="font-family: monospace; font-size: 0.7rem; color: #A8A29E; margin-bottom: 0.25rem;">/is-it-a-requirement-to-apply-for-pergola-planning-permission-uk/</div>
+              <h2 class="font-serif-editorial text-lg font-bold text-stone-900 group-hover:text-[#BE123C]" style="margin-bottom: 0.5rem; transition: color 0.15s ease;">
+                Is it a requirement to apply for pergola planning permission UK?
+              </h2>
+              <p class="text-xs text-stone-500" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                The last thing you want to do is install a brand new pergola only to find out that you’re in contravention of the local ...
+              </p>
+            </div>
+            <div style="padding: 0.75rem 1.25rem; background-color: #FAFAFA; border-top: 1px solid var(--pseo-card-border); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; font-weight: 500; color: #78716C;">
+              <span>Read Guide</span>
+              <span style="color: #BE123C; font-weight: 700;">→</span>
+            </div>
+          </a>
+        </article>
+        
+        <article class="pseo-card group">
+          <a href="https://annadeco.github.io/the-best-plants-and-climbers-for-pergolas-in-the-uk/" style="display: flex; flex-direction: column; height: 100%;">
+            <div class="pseo-hero-media">
+              <img src="https://annadeco.github.io/assets/images/the-best-plants-and-climbers-for-pergolas-in-the-uk.jpg" alt="The best plants and climbers for pergolas in the UK" loading="lazy" onerror="this.onerror=null; this.src='https://annadeco.github.io/assets/images/the-best-plants-and-climbers-for-pergolas-in-the-uk.svg';">
+              <span class="pseo-badge" style="position: absolute; top: 0.75rem; left: 0.75rem; background-color: rgba(255, 255, 255, 0.95); color: #1C1917; font-size: 0.625rem;">
+                Gazebos Pergola
+              </span>
+            </div>
+            <div style="padding: 1.25rem; flex: 1 0 auto;">
+              <div style="font-family: monospace; font-size: 0.7rem; color: #A8A29E; margin-bottom: 0.25rem;">/the-best-plants-and-climbers-for-pergolas-in-the-uk/</div>
+              <h2 class="font-serif-editorial text-lg font-bold text-stone-900 group-hover:text-[#BE123C]" style="margin-bottom: 0.5rem; transition: color 0.15s ease;">
+                The best plants and climbers for pergolas in the UK
+              </h2>
+              <p class="text-xs text-stone-500" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                Pergolas have loads of practical applications, which make them a popular choice for garden renovations. However, they al...
+              </p>
+            </div>
+            <div style="padding: 0.75rem 1.25rem; background-color: #FAFAFA; border-top: 1px solid var(--pseo-card-border); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; font-weight: 500; color: #78716C;">
+              <span>Read Guide</span>
+              <span style="color: #BE123C; font-weight: 700;">→</span>
+            </div>
+          </a>
+        </article>
+        
+        <article class="pseo-card group">
+          <a href="https://annadeco.github.io/50-florida-landscaping-ideas-addicted-to-organization/" style="display: flex; flex-direction: column; height: 100%;">
+            <div class="pseo-hero-media">
+              <img src="https://annadeco.github.io/assets/images/50-florida-landscaping-ideas-addicted-to-organization.jpg" alt="50 Florida Landscaping Ideas – Addicted To Organization" loading="lazy" onerror="this.onerror=null; this.src='https://annadeco.github.io/assets/images/50-florida-landscaping-ideas-addicted-to-organization.svg';">
+              <span class="pseo-badge" style="position: absolute; top: 0.75rem; left: 0.75rem; background-color: rgba(255, 255, 255, 0.95); color: #1C1917; font-size: 0.625rem;">
+                Landscaping Ideas1
+              </span>
+            </div>
+            <div style="padding: 1.25rem; flex: 1 0 auto;">
+              <div style="font-family: monospace; font-size: 0.7rem; color: #A8A29E; margin-bottom: 0.25rem;">/50-florida-landscaping-ideas-addicted-to-organization/</div>
+              <h2 class="font-serif-editorial text-lg font-bold text-stone-900 group-hover:text-[#BE123C]" style="margin-bottom: 0.5rem; transition: color 0.15s ease;">
+                50 Florida Landscaping Ideas – Addicted To Organization
+              </h2>
+              <p class="text-xs text-stone-500" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                Are you tired of your Florida yard looking brown or boring, but afraid of the huge water bill? Florida yards need smart ...
+              </p>
+            </div>
+            <div style="padding: 0.75rem 1.25rem; background-color: #FAFAFA; border-top: 1px solid var(--pseo-card-border); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; font-weight: 500; color: #78716C;">
+              <span>Read Guide</span>
+              <span style="color: #BE123C; font-weight: 700;">→</span>
+            </div>
+          </a>
+        </article>
+        
+        <article class="pseo-card group">
+          <a href="https://annadeco.github.io/50-driveway-landscaping-ideas-addicted-to-organization/" style="display: flex; flex-direction: column; height: 100%;">
+            <div class="pseo-hero-media">
+              <img src="https://annadeco.github.io/assets/images/50-driveway-landscaping-ideas-addicted-to-organization.jpg" alt="50 Driveway Landscaping Ideas – Addicted To Organization" loading="lazy" onerror="this.onerror=null; this.src='https://annadeco.github.io/assets/images/50-driveway-landscaping-ideas-addicted-to-organization.svg';">
+              <span class="pseo-badge" style="position: absolute; top: 0.75rem; left: 0.75rem; background-color: rgba(255, 255, 255, 0.95); color: #1C1917; font-size: 0.625rem;">
+                Landscaping Ideas1
+              </span>
+            </div>
+            <div style="padding: 1.25rem; flex: 1 0 auto;">
+              <div style="font-family: monospace; font-size: 0.7rem; color: #A8A29E; margin-bottom: 0.25rem;">/50-driveway-landscaping-ideas-addicted-to-organization/</div>
+              <h2 class="font-serif-editorial text-lg font-bold text-stone-900 group-hover:text-[#BE123C]" style="margin-bottom: 0.5rem; transition: color 0.15s ease;">
+                50 Driveway Landscaping Ideas – Addicted To Organization
+              </h2>
+              <p class="text-xs text-stone-500" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                Is your driveway just a boring slab of concrete? It’s the first thing guests see, but often we forget to make it look go...
+              </p>
+            </div>
+            <div style="padding: 0.75rem 1.25rem; background-color: #FAFAFA; border-top: 1px solid var(--pseo-card-border); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; font-weight: 500; color: #78716C;">
+              <span>Read Guide</span>
+              <span style="color: #BE123C; font-weight: 700;">→</span>
+            </div>
+          </a>
+        </article>
+        
+        <article class="pseo-card group">
+          <a href="https://annadeco.github.io/50-rock-garden-landscaping-ideas/" style="display: flex; flex-direction: column; height: 100%;">
+            <div class="pseo-hero-media">
+              <img src="https://annadeco.github.io/assets/images/50-rock-garden-landscaping-ideas.jpg" alt="50 Rock Garden Landscaping Ideas" loading="lazy" onerror="this.onerror=null; this.src='https://annadeco.github.io/assets/images/50-rock-garden-landscaping-ideas.svg';">
+              <span class="pseo-badge" style="position: absolute; top: 0.75rem; left: 0.75rem; background-color: rgba(255, 255, 255, 0.95); color: #1C1917; font-size: 0.625rem;">
+                Landscaping Ideas1
+              </span>
+            </div>
+            <div style="padding: 1.25rem; flex: 1 0 auto;">
+              <div style="font-family: monospace; font-size: 0.7rem; color: #A8A29E; margin-bottom: 0.25rem;">/50-rock-garden-landscaping-ideas/</div>
+              <h2 class="font-serif-editorial text-lg font-bold text-stone-900 group-hover:text-[#BE123C]" style="margin-bottom: 0.5rem; transition: color 0.15s ease;">
+                50 Rock Garden Landscaping Ideas
+              </h2>
+              <p class="text-xs text-stone-500" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                Does your yard look boring, or maybe you have a tricky hill? Rock garden landscaping ideas are the simple, budget-friend...
+              </p>
+            </div>
+            <div style="padding: 0.75rem 1.25rem; background-color: #FAFAFA; border-top: 1px solid var(--pseo-card-border); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; font-weight: 500; color: #78716C;">
+              <span>Read Guide</span>
+              <span style="color: #BE123C; font-weight: 700;">→</span>
+            </div>
+          </a>
+        </article>
+        
+        <article class="pseo-card group">
+          <a href="https://annadeco.github.io/50-low-maintenance-landscape-ideas/" style="display: flex; flex-direction: column; height: 100%;">
+            <div class="pseo-hero-media">
+              <img src="https://annadeco.github.io/assets/images/50-low-maintenance-landscape-ideas.jpg" alt="50 Low Maintenance Landscape Ideas" loading="lazy" onerror="this.onerror=null; this.src='https://annadeco.github.io/assets/images/50-low-maintenance-landscape-ideas.svg';">
+              <span class="pseo-badge" style="position: absolute; top: 0.75rem; left: 0.75rem; background-color: rgba(255, 255, 255, 0.95); color: #1C1917; font-size: 0.625rem;">
+                Landscaping Ideas1
+              </span>
+            </div>
+            <div style="padding: 1.25rem; flex: 1 0 auto;">
+              <div style="font-family: monospace; font-size: 0.7rem; color: #A8A29E; margin-bottom: 0.25rem;">/50-low-maintenance-landscape-ideas/</div>
+              <h2 class="font-serif-editorial text-lg font-bold text-stone-900 group-hover:text-[#BE123C]" style="margin-bottom: 0.5rem; transition: color 0.15s ease;">
+                50 Low Maintenance Landscape Ideas
+              </h2>
+              <p class="text-xs text-stone-500" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                Are you tired of spending every weekend weeding and watering? Yard work shouldn’t feel like a second job! I’m sharing 50...
+              </p>
+            </div>
+            <div style="padding: 0.75rem 1.25rem; background-color: #FAFAFA; border-top: 1px solid var(--pseo-card-border); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; font-weight: 500; color: #78716C;">
+              <span>Read Guide</span>
+              <span style="color: #BE123C; font-weight: 700;">→</span>
+            </div>
+          </a>
+        </article>
+        
+        <article class="pseo-card group">
+          <a href="https://annadeco.github.io/50-hydrangea-landscaping-ideas-addicted-to-organization/" style="display: flex; flex-direction: column; height: 100%;">
+            <div class="pseo-hero-media">
+              <img src="https://annadeco.github.io/assets/images/50-hydrangea-landscaping-ideas-addicted-to-organization.jpg" alt="50 Hydrangea Landscaping Ideas – Addicted To Organization" loading="lazy" onerror="this.onerror=null; this.src='https://annadeco.github.io/assets/images/50-hydrangea-landscaping-ideas-addicted-to-organization.svg';">
+              <span class="pseo-badge" style="position: absolute; top: 0.75rem; left: 0.75rem; background-color: rgba(255, 255, 255, 0.95); color: #1C1917; font-size: 0.625rem;">
+                Landscaping Ideas1
+              </span>
+            </div>
+            <div style="padding: 1.25rem; flex: 1 0 auto;">
+              <div style="font-family: monospace; font-size: 0.7rem; color: #A8A29E; margin-bottom: 0.25rem;">/50-hydrangea-landscaping-ideas-addicted-to-organization/</div>
+              <h2 class="font-serif-editorial text-lg font-bold text-stone-900 group-hover:text-[#BE123C]" style="margin-bottom: 0.5rem; transition: color 0.15s ease;">
+                50 Hydrangea Landscaping Ideas – Addicted To Organization
+              </h2>
+              <p class="text-xs text-stone-500" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                Are you tired of a boring yard that just blends in? Hydrangeas are the secret weapon for cheap, high-end garden style! W...
+              </p>
+            </div>
+            <div style="padding: 0.75rem 1.25rem; background-color: #FAFAFA; border-top: 1px solid var(--pseo-card-border); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; font-weight: 500; color: #78716C;">
+              <span>Read Guide</span>
+              <span style="color: #BE123C; font-weight: 700;">→</span>
+            </div>
+          </a>
+        </article>
+        
+        <article class="pseo-card group">
+          <a href="https://annadeco.github.io/50-front-yard-landscaping-ideas/" style="display: flex; flex-direction: column; height: 100%;">
+            <div class="pseo-hero-media">
+              <img src="https://annadeco.github.io/assets/images/50-front-yard-landscaping-ideas.jpg" alt="50 Front Yard Landscaping Ideas" loading="lazy" onerror="this.onerror=null; this.src='https://annadeco.github.io/assets/images/50-front-yard-landscaping-ideas.svg';">
+              <span class="pseo-badge" style="position: absolute; top: 0.75rem; left: 0.75rem; background-color: rgba(255, 255, 255, 0.95); color: #1C1917; font-size: 0.625rem;">
+                Landscaping Ideas1
+              </span>
+            </div>
+            <div style="padding: 1.25rem; flex: 1 0 auto;">
+              <div style="font-family: monospace; font-size: 0.7rem; color: #A8A29E; margin-bottom: 0.25rem;">/50-front-yard-landscaping-ideas/</div>
+              <h2 class="font-serif-editorial text-lg font-bold text-stone-900 group-hover:text-[#BE123C]" style="margin-bottom: 0.5rem; transition: color 0.15s ease;">
+                50 Front Yard Landscaping Ideas
+              </h2>
+              <p class="text-xs text-stone-500" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                Does your front yard feel boring, but you have no clue where to start? You want that beautiful curb appeal without spend...
+              </p>
+            </div>
+            <div style="padding: 0.75rem 1.25rem; background-color: #FAFAFA; border-top: 1px solid var(--pseo-card-border); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; font-weight: 500; color: #78716C;">
+              <span>Read Guide</span>
+              <span style="color: #BE123C; font-weight: 700;">→</span>
+            </div>
+          </a>
+        </article>
+        
+        <article class="pseo-card group">
+          <a href="https://annadeco.github.io/25-landscaping-ideas-for-the-porch/" style="display: flex; flex-direction: column; height: 100%;">
+            <div class="pseo-hero-media">
+              <img src="https://annadeco.github.io/assets/images/25-landscaping-ideas-for-the-porch.jpg" alt="25 Landscaping Ideas for the Porch" loading="lazy" onerror="this.onerror=null; this.src='https://annadeco.github.io/assets/images/25-landscaping-ideas-for-the-porch.svg';">
+              <span class="pseo-badge" style="position: absolute; top: 0.75rem; left: 0.75rem; background-color: rgba(255, 255, 255, 0.95); color: #1C1917; font-size: 0.625rem;">
+                Landscaping Ideas1
+              </span>
+            </div>
+            <div style="padding: 1.25rem; flex: 1 0 auto;">
+              <div style="font-family: monospace; font-size: 0.7rem; color: #A8A29E; margin-bottom: 0.25rem;">/25-landscaping-ideas-for-the-porch/</div>
+              <h2 class="font-serif-editorial text-lg font-bold text-stone-900 group-hover:text-[#BE123C]" style="margin-bottom: 0.5rem; transition: color 0.15s ease;">
+                25 Landscaping Ideas for the Porch
+              </h2>
+              <p class="text-xs text-stone-500" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                Want your porch to be more “wow” and less “meh”? These landscaping ideas transform a simple entryway into a cheerful, fl...
+              </p>
+            </div>
+            <div style="padding: 0.75rem 1.25rem; background-color: #FAFAFA; border-top: 1px solid var(--pseo-card-border); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; font-weight: 500; color: #78716C;">
+              <span>Read Guide</span>
+              <span style="color: #BE123C; font-weight: 700;">→</span>
+            </div>
+          </a>
+        </article>
+        
+        <article class="pseo-card group">
+          <a href="https://annadeco.github.io/69-innovative-pool-ideas-for-every-backyard/" style="display: flex; flex-direction: column; height: 100%;">
+            <div class="pseo-hero-media">
+              <img src="https://annadeco.github.io/assets/images/69-innovative-pool-ideas-for-every-backyard.jpg" alt="69 Innovative Pool Ideas for Every Backyard" loading="lazy" onerror="this.onerror=null; this.src='https://annadeco.github.io/assets/images/69-innovative-pool-ideas-for-every-backyard.svg';">
+              <span class="pseo-badge" style="position: absolute; top: 0.75rem; left: 0.75rem; background-color: rgba(255, 255, 255, 0.95); color: #1C1917; font-size: 0.625rem;">
+                Pool1
+              </span>
+            </div>
+            <div style="padding: 1.25rem; flex: 1 0 auto;">
+              <div style="font-family: monospace; font-size: 0.7rem; color: #A8A29E; margin-bottom: 0.25rem;">/69-innovative-pool-ideas-for-every-backyard/</div>
+              <h2 class="font-serif-editorial text-lg font-bold text-stone-900 group-hover:text-[#BE123C]" style="margin-bottom: 0.5rem; transition: color 0.15s ease;">
+                69 Innovative Pool Ideas for Every Backyard
+              </h2>
+              <p class="text-xs text-stone-500" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                Are you dreaming of transforming your backyard into a private oasis? Whether you’re planning a small retreat or a luxuri...
+              </p>
+            </div>
+            <div style="padding: 0.75rem 1.25rem; background-color: #FAFAFA; border-top: 1px solid var(--pseo-card-border); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; font-weight: 500; color: #78716C;">
+              <span>Read Guide</span>
+              <span style="color: #BE123C; font-weight: 700;">→</span>
+            </div>
+          </a>
+        </article>
+        
+        <article class="pseo-card group">
+          <a href="https://annadeco.github.io/explore-pool-backyard-ideas-for-every-home/" style="display: flex; flex-direction: column; height: 100%;">
+            <div class="pseo-hero-media">
+              <img src="https://annadeco.github.io/assets/images/explore-pool-backyard-ideas-for-every-home.jpg" alt="Explore Pool Backyard Ideas for Every Home" loading="lazy" onerror="this.onerror=null; this.src='https://annadeco.github.io/assets/images/explore-pool-backyard-ideas-for-every-home.svg';">
+              <span class="pseo-badge" style="position: absolute; top: 0.75rem; left: 0.75rem; background-color: rgba(255, 255, 255, 0.95); color: #1C1917; font-size: 0.625rem;">
+                Pool1
+              </span>
+            </div>
+            <div style="padding: 1.25rem; flex: 1 0 auto;">
+              <div style="font-family: monospace; font-size: 0.7rem; color: #A8A29E; margin-bottom: 0.25rem;">/explore-pool-backyard-ideas-for-every-home/</div>
+              <h2 class="font-serif-editorial text-lg font-bold text-stone-900 group-hover:text-[#BE123C]" style="margin-bottom: 0.5rem; transition: color 0.15s ease;">
+                Explore Pool Backyard Ideas for Every Home
+              </h2>
+              <p class="text-xs text-stone-500" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                Creating the perfect pool backyard is an exciting way to enhance your outdoor living space. From modern designs to tropi...
+              </p>
+            </div>
+            <div style="padding: 0.75rem 1.25rem; background-color: #FAFAFA; border-top: 1px solid var(--pseo-card-border); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; font-weight: 500; color: #78716C;">
+              <span>Read Guide</span>
+              <span style="color: #BE123C; font-weight: 700;">→</span>
+            </div>
+          </a>
+        </article>
+        
+        <article class="pseo-card group">
+          <a href="https://annadeco.github.io/66-backyard-ideas-with-pool-create-your-perfect-oasis/" style="display: flex; flex-direction: column; height: 100%;">
+            <div class="pseo-hero-media">
+              <img src="https://annadeco.github.io/assets/images/66-backyard-ideas-with-pool-create-your-perfect-oasis.jpg" alt="66 Backyard Ideas with Pool: Create Your Perfect Oasis" loading="lazy" onerror="this.onerror=null; this.src='https://annadeco.github.io/assets/images/66-backyard-ideas-with-pool-create-your-perfect-oasis.svg';">
+              <span class="pseo-badge" style="position: absolute; top: 0.75rem; left: 0.75rem; background-color: rgba(255, 255, 255, 0.95); color: #1C1917; font-size: 0.625rem;">
+                Pool1
+              </span>
+            </div>
+            <div style="padding: 1.25rem; flex: 1 0 auto;">
+              <div style="font-family: monospace; font-size: 0.7rem; color: #A8A29E; margin-bottom: 0.25rem;">/66-backyard-ideas-with-pool-create-your-perfect-oasis/</div>
+              <h2 class="font-serif-editorial text-lg font-bold text-stone-900 group-hover:text-[#BE123C]" style="margin-bottom: 0.5rem; transition: color 0.15s ease;">
+                66 Backyard Ideas with Pool: Create Your Perfect Oasis
+              </h2>
+              <p class="text-xs text-stone-500" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                Creating a backyard with a pool isn’t just about having a place to cool off in the summer. It’s an opportunity to transf...
+              </p>
+            </div>
+            <div style="padding: 0.75rem 1.25rem; background-color: #FAFAFA; border-top: 1px solid var(--pseo-card-border); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; font-weight: 500; color: #78716C;">
+              <span>Read Guide</span>
+              <span style="color: #BE123C; font-weight: 700;">→</span>
+            </div>
+          </a>
+        </article>
+        
+        <article class="pseo-card group">
+          <a href="https://annadeco.github.io/73-top-deck-ideas-for-above-ground-pools/" style="display: flex; flex-direction: column; height: 100%;">
+            <div class="pseo-hero-media">
+              <img src="https://annadeco.github.io/assets/images/73-top-deck-ideas-for-above-ground-pools.jpg" alt="73 Top Deck Ideas for Above Ground Pools" loading="lazy" onerror="this.onerror=null; this.src='https://annadeco.github.io/assets/images/73-top-deck-ideas-for-above-ground-pools.svg';">
+              <span class="pseo-badge" style="position: absolute; top: 0.75rem; left: 0.75rem; background-color: rgba(255, 255, 255, 0.95); color: #1C1917; font-size: 0.625rem;">
+                Pool1
+              </span>
+            </div>
+            <div style="padding: 1.25rem; flex: 1 0 auto;">
+              <div style="font-family: monospace; font-size: 0.7rem; color: #A8A29E; margin-bottom: 0.25rem;">/73-top-deck-ideas-for-above-ground-pools/</div>
+              <h2 class="font-serif-editorial text-lg font-bold text-stone-900 group-hover:text-[#BE123C]" style="margin-bottom: 0.5rem; transition: color 0.15s ease;">
+                73 Top Deck Ideas for Above Ground Pools
+              </h2>
+              <p class="text-xs text-stone-500" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                An above ground pool deck can completely transform your backyard, making it more functional, stylish, and inviting. Whet...
+              </p>
+            </div>
+            <div style="padding: 0.75rem 1.25rem; background-color: #FAFAFA; border-top: 1px solid var(--pseo-card-border); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; font-weight: 500; color: #78716C;">
+              <span>Read Guide</span>
+              <span style="color: #BE123C; font-weight: 700;">→</span>
+            </div>
+          </a>
+        </article>
+        
+        <article class="pseo-card group">
+          <a href="https://annadeco.github.io/69-top-pool-pavilion-ideas-to-enhance-your-backyard-oasis/" style="display: flex; flex-direction: column; height: 100%;">
+            <div class="pseo-hero-media">
+              <img src="https://annadeco.github.io/assets/images/69-top-pool-pavilion-ideas-to-enhance-your-backyard-oasis.jpg" alt="69 Top Pool Pavilion Ideas to Enhance Your Backyard Oasis" loading="lazy" onerror="this.onerror=null; this.src='https://annadeco.github.io/assets/images/69-top-pool-pavilion-ideas-to-enhance-your-backyard-oasis.svg';">
+              <span class="pseo-badge" style="position: absolute; top: 0.75rem; left: 0.75rem; background-color: rgba(255, 255, 255, 0.95); color: #1C1917; font-size: 0.625rem;">
+                Pool1
+              </span>
+            </div>
+            <div style="padding: 1.25rem; flex: 1 0 auto;">
+              <div style="font-family: monospace; font-size: 0.7rem; color: #A8A29E; margin-bottom: 0.25rem;">/69-top-pool-pavilion-ideas-to-enhance-your-backyard-oasis/</div>
+              <h2 class="font-serif-editorial text-lg font-bold text-stone-900 group-hover:text-[#BE123C]" style="margin-bottom: 0.5rem; transition: color 0.15s ease;">
+                69 Top Pool Pavilion Ideas to Enhance Your Backyard Oasis
+              </h2>
+              <p class="text-xs text-stone-500" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                More than just a shaded structure, a pool pavilion is an epitome of luxury, comfort, and practicality. Your yard can be ...
+              </p>
+            </div>
+            <div style="padding: 0.75rem 1.25rem; background-color: #FAFAFA; border-top: 1px solid var(--pseo-card-border); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; font-weight: 500; color: #78716C;">
+              <span>Read Guide</span>
+              <span style="color: #BE123C; font-weight: 700;">→</span>
+            </div>
+          </a>
+        </article>
+        
+        <article class="pseo-card group">
+          <a href="https://annadeco.github.io/67-simple-pool-ideas-to-transform-your-backyard/" style="display: flex; flex-direction: column; height: 100%;">
+            <div class="pseo-hero-media">
+              <img src="https://annadeco.github.io/assets/images/67-simple-pool-ideas-to-transform-your-backyard.jpg" alt="67 Simple Pool Ideas to Transform Your Backyard" loading="lazy" onerror="this.onerror=null; this.src='https://annadeco.github.io/assets/images/67-simple-pool-ideas-to-transform-your-backyard.svg';">
+              <span class="pseo-badge" style="position: absolute; top: 0.75rem; left: 0.75rem; background-color: rgba(255, 255, 255, 0.95); color: #1C1917; font-size: 0.625rem;">
+                Pool1
+              </span>
+            </div>
+            <div style="padding: 1.25rem; flex: 1 0 auto;">
+              <div style="font-family: monospace; font-size: 0.7rem; color: #A8A29E; margin-bottom: 0.25rem;">/67-simple-pool-ideas-to-transform-your-backyard/</div>
+              <h2 class="font-serif-editorial text-lg font-bold text-stone-900 group-hover:text-[#BE123C]" style="margin-bottom: 0.5rem; transition: color 0.15s ease;">
+                67 Simple Pool Ideas to Transform Your Backyard
+              </h2>
+              <p class="text-xs text-stone-500" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                Do you have in mind a simple pool design that will make your backyard more beautiful while keeping within the budget? Re...
+              </p>
+            </div>
+            <div style="padding: 0.75rem 1.25rem; background-color: #FAFAFA; border-top: 1px solid var(--pseo-card-border); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; font-weight: 500; color: #78716C;">
+              <span>Read Guide</span>
+              <span style="color: #BE123C; font-weight: 700;">→</span>
+            </div>
+          </a>
+        </article>
+        
+        <article class="pseo-card group">
+          <a href="https://annadeco.github.io/transform-your-backyard-with-stunning-62-summer-pool-decor-ideas/" style="display: flex; flex-direction: column; height: 100%;">
+            <div class="pseo-hero-media">
+              <img src="https://annadeco.github.io/assets/images/transform-your-backyard-with-stunning-62-summer-pool-decor-ideas.jpg" alt="Transform Your Backyard with Stunning 62 Summer Pool Decor Ideas" loading="lazy" onerror="this.onerror=null; this.src='https://annadeco.github.io/assets/images/transform-your-backyard-with-stunning-62-summer-pool-decor-ideas.svg';">
+              <span class="pseo-badge" style="position: absolute; top: 0.75rem; left: 0.75rem; background-color: rgba(255, 255, 255, 0.95); color: #1C1917; font-size: 0.625rem;">
+                Pool1
+              </span>
+            </div>
+            <div style="padding: 1.25rem; flex: 1 0 auto;">
+              <div style="font-family: monospace; font-size: 0.7rem; color: #A8A29E; margin-bottom: 0.25rem;">/transform-your-backyard-with-stunning-62-summer-pool-decor-ideas/</div>
+              <h2 class="font-serif-editorial text-lg font-bold text-stone-900 group-hover:text-[#BE123C]" style="margin-bottom: 0.5rem; transition: color 0.15s ease;">
+                Transform Your Backyard with Stunning 62 Summer Pool Decor Ideas
+              </h2>
+              <p class="text-xs text-stone-500" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                Would you like to turn your backyard into a marvelous oasis by utilizing summer pool decor ideas that mix style and util...
+              </p>
+            </div>
+            <div style="padding: 0.75rem 1.25rem; background-color: #FAFAFA; border-top: 1px solid var(--pseo-card-border); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; font-weight: 500; color: #78716C;">
+              <span>Read Guide</span>
+              <span style="color: #BE123C; font-weight: 700;">→</span>
+            </div>
+          </a>
+        </article>
+        
+        <article class="pseo-card group">
+          <a href="https://annadeco.github.io/small-pool-deck-ideas-55-stylish-designs-for-compact-outdoor-spaces/" style="display: flex; flex-direction: column; height: 100%;">
+            <div class="pseo-hero-media">
+              <img src="https://annadeco.github.io/assets/images/small-pool-deck-ideas-55-stylish-designs-for-compact-outdoor-spaces.jpg" alt="Small Pool Deck Ideas: 55 Stylish Designs for Compact Outdoor Spaces" loading="lazy" onerror="this.onerror=null; this.src='https://annadeco.github.io/assets/images/small-pool-deck-ideas-55-stylish-designs-for-compact-outdoor-spaces.svg';">
+              <span class="pseo-badge" style="position: absolute; top: 0.75rem; left: 0.75rem; background-color: rgba(255, 255, 255, 0.95); color: #1C1917; font-size: 0.625rem;">
+                Pool1
+              </span>
+            </div>
+            <div style="padding: 1.25rem; flex: 1 0 auto;">
+              <div style="font-family: monospace; font-size: 0.7rem; color: #A8A29E; margin-bottom: 0.25rem;">/small-pool-deck-ideas-55-stylish-designs-for-compact-outdoor-spaces/</div>
+              <h2 class="font-serif-editorial text-lg font-bold text-stone-900 group-hover:text-[#BE123C]" style="margin-bottom: 0.5rem; transition: color 0.15s ease;">
+                Small Pool Deck Ideas: 55 Stylish Designs for Compact Outdoor Spaces
+              </h2>
+              <p class="text-xs text-stone-500" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                A modest pool deck serves as a transformative element which delivers luxury and relaxation and practicality to tight bac...
+              </p>
+            </div>
+            <div style="padding: 0.75rem 1.25rem; background-color: #FAFAFA; border-top: 1px solid var(--pseo-card-border); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; font-weight: 500; color: #78716C;">
+              <span>Read Guide</span>
+              <span style="color: #BE123C; font-weight: 700;">→</span>
+            </div>
+          </a>
+        </article>
+        
+        <article class="pseo-card group">
+          <a href="https://annadeco.github.io/59-outdoor-pool-ideas-2026-modern-stylish-and-unique-designs-for-every-home/" style="display: flex; flex-direction: column; height: 100%;">
+            <div class="pseo-hero-media">
+              <img src="https://annadeco.github.io/assets/images/59-outdoor-pool-ideas-2026-modern-stylish-and-unique-designs-for-every-home.jpg" alt="59 Outdoor Pool Ideas 2026: Modern, Stylish, And Unique Designs For Every Home" loading="lazy" onerror="this.onerror=null; this.src='https://annadeco.github.io/assets/images/59-outdoor-pool-ideas-2026-modern-stylish-and-unique-designs-for-every-home.svg';">
+              <span class="pseo-badge" style="position: absolute; top: 0.75rem; left: 0.75rem; background-color: rgba(255, 255, 255, 0.95); color: #1C1917; font-size: 0.625rem;">
+                Pool1
+              </span>
+            </div>
+            <div style="padding: 1.25rem; flex: 1 0 auto;">
+              <div style="font-family: monospace; font-size: 0.7rem; color: #A8A29E; margin-bottom: 0.25rem;">/59-outdoor-pool-ideas-2026-modern-stylish-and-unique-designs-for-every-home/</div>
+              <h2 class="font-serif-editorial text-lg font-bold text-stone-900 group-hover:text-[#BE123C]" style="margin-bottom: 0.5rem; transition: color 0.15s ease;">
+                59 Outdoor Pool Ideas 2026: Modern, Stylish, And Unique Designs For Every Home
+              </h2>
+              <p class="text-xs text-stone-500" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                Outdoor pool ideas in 2026 go far beyond traditional backyard designs, transforming pools into architectural statements ...
+              </p>
+            </div>
+            <div style="padding: 0.75rem 1.25rem; background-color: #FAFAFA; border-top: 1px solid var(--pseo-card-border); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; font-weight: 500; color: #78716C;">
+              <span>Read Guide</span>
+              <span style="color: #BE123C; font-weight: 700;">→</span>
+            </div>
+          </a>
+        </article>
+        
+        <article class="pseo-card group">
+          <a href="https://annadeco.github.io/55-outdoor-pool-area-2026-ideas-for-luxury-backyard-living/" style="display: flex; flex-direction: column; height: 100%;">
+            <div class="pseo-hero-media">
+              <img src="https://annadeco.github.io/assets/images/55-outdoor-pool-area-2026-ideas-for-luxury-backyard-living.jpg" alt="55 Outdoor Pool Area 2026 Ideas For Luxury Backyard Living" loading="lazy" onerror="this.onerror=null; this.src='https://annadeco.github.io/assets/images/55-outdoor-pool-area-2026-ideas-for-luxury-backyard-living.svg';">
+              <span class="pseo-badge" style="position: absolute; top: 0.75rem; left: 0.75rem; background-color: rgba(255, 255, 255, 0.95); color: #1C1917; font-size: 0.625rem;">
+                Pool1
+              </span>
+            </div>
+            <div style="padding: 1.25rem; flex: 1 0 auto;">
+              <div style="font-family: monospace; font-size: 0.7rem; color: #A8A29E; margin-bottom: 0.25rem;">/55-outdoor-pool-area-2026-ideas-for-luxury-backyard-living/</div>
+              <h2 class="font-serif-editorial text-lg font-bold text-stone-900 group-hover:text-[#BE123C]" style="margin-bottom: 0.5rem; transition: color 0.15s ease;">
+                55 Outdoor Pool Area 2026 Ideas For Luxury Backyard Living
+              </h2>
+              <p class="text-xs text-stone-500" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                The Outdoor Pool Area 2026 is no longer just a place to swim — it has evolved into a fully designed lifestyle destinatio...
+              </p>
+            </div>
+            <div style="padding: 0.75rem 1.25rem; background-color: #FAFAFA; border-top: 1px solid var(--pseo-card-border); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; font-weight: 500; color: #78716C;">
+              <span>Read Guide</span>
+              <span style="color: #BE123C; font-weight: 700;">→</span>
+            </div>
+          </a>
+        </article>
+        
+        <article class="pseo-card group">
+          <a href="https://annadeco.github.io/56-small-pool-ideas-2026-smart-and-stylish-designs-for-compact-backyards/" style="display: flex; flex-direction: column; height: 100%;">
+            <div class="pseo-hero-media">
+              <img src="https://annadeco.github.io/assets/images/56-small-pool-ideas-2026-smart-and-stylish-designs-for-compact-backyards.jpg" alt="56 Small Pool Ideas 2026: Smart And Stylish Designs For Compact Backyards" loading="lazy" onerror="this.onerror=null; this.src='https://annadeco.github.io/assets/images/56-small-pool-ideas-2026-smart-and-stylish-designs-for-compact-backyards.svg';">
+              <span class="pseo-badge" style="position: absolute; top: 0.75rem; left: 0.75rem; background-color: rgba(255, 255, 255, 0.95); color: #1C1917; font-size: 0.625rem;">
+                Pool1
+              </span>
+            </div>
+            <div style="padding: 1.25rem; flex: 1 0 auto;">
+              <div style="font-family: monospace; font-size: 0.7rem; color: #A8A29E; margin-bottom: 0.25rem;">/56-small-pool-ideas-2026-smart-and-stylish-designs-for-compact-backyards/</div>
+              <h2 class="font-serif-editorial text-lg font-bold text-stone-900 group-hover:text-[#BE123C]" style="margin-bottom: 0.5rem; transition: color 0.15s ease;">
+                56 Small Pool Ideas 2026: Smart And Stylish Designs For Compact Backyards
+              </h2>
+              <p class="text-xs text-stone-500" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                In 2026, small pool ideas are redefining what luxury and relaxation look like in compact outdoor spaces. Homeowners are ...
+              </p>
+            </div>
+            <div style="padding: 0.75rem 1.25rem; background-color: #FAFAFA; border-top: 1px solid var(--pseo-card-border); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; font-weight: 500; color: #78716C;">
+              <span>Read Guide</span>
+              <span style="color: #BE123C; font-weight: 700;">→</span>
+            </div>
+          </a>
+        </article>
+        
+        <article class="pseo-card group">
+          <a href="https://annadeco.github.io/57-above-ground-pool-ideas-2026-for-a-stylish-and-modern-backyard/" style="display: flex; flex-direction: column; height: 100%;">
+            <div class="pseo-hero-media">
+              <img src="https://annadeco.github.io/assets/images/57-above-ground-pool-ideas-2026-for-a-stylish-and-modern-backyard.jpg" alt="57 Above Ground Pool Ideas 2026 For A Stylish And Modern Backyard" loading="lazy" onerror="this.onerror=null; this.src='https://annadeco.github.io/assets/images/57-above-ground-pool-ideas-2026-for-a-stylish-and-modern-backyard.svg';">
+              <span class="pseo-badge" style="position: absolute; top: 0.75rem; left: 0.75rem; background-color: rgba(255, 255, 255, 0.95); color: #1C1917; font-size: 0.625rem;">
+                Pool1
+              </span>
+            </div>
+            <div style="padding: 1.25rem; flex: 1 0 auto;">
+              <div style="font-family: monospace; font-size: 0.7rem; color: #A8A29E; margin-bottom: 0.25rem;">/57-above-ground-pool-ideas-2026-for-a-stylish-and-modern-backyard/</div>
+              <h2 class="font-serif-editorial text-lg font-bold text-stone-900 group-hover:text-[#BE123C]" style="margin-bottom: 0.5rem; transition: color 0.15s ease;">
+                57 Above Ground Pool Ideas 2026 For A Stylish And Modern Backyard
+              </h2>
+              <p class="text-xs text-stone-500" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                Above ground pool ideas 2026 are redefining what it means to have a stylish and functional backyard retreat. No longer s...
+              </p>
+            </div>
+            <div style="padding: 0.75rem 1.25rem; background-color: #FAFAFA; border-top: 1px solid var(--pseo-card-border); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; font-weight: 500; color: #78716C;">
+              <span>Read Guide</span>
+              <span style="color: #BE123C; font-weight: 700;">→</span>
+            </div>
+          </a>
+        </article>
+        
+        <article class="pseo-card group">
+          <a href="https://annadeco.github.io/57-plunge-pool-ideas-2026-for-stylish-and-modern-outdoor-spaces/" style="display: flex; flex-direction: column; height: 100%;">
+            <div class="pseo-hero-media">
+              <img src="https://annadeco.github.io/assets/images/57-plunge-pool-ideas-2026-for-stylish-and-modern-outdoor-spaces.jpg" alt="57 Plunge Pool Ideas 2026 For Stylish And Modern Outdoor Spaces" loading="lazy" onerror="this.onerror=null; this.src='https://annadeco.github.io/assets/images/57-plunge-pool-ideas-2026-for-stylish-and-modern-outdoor-spaces.svg';">
+              <span class="pseo-badge" style="position: absolute; top: 0.75rem; left: 0.75rem; background-color: rgba(255, 255, 255, 0.95); color: #1C1917; font-size: 0.625rem;">
+                Pool1
+              </span>
+            </div>
+            <div style="padding: 1.25rem; flex: 1 0 auto;">
+              <div style="font-family: monospace; font-size: 0.7rem; color: #A8A29E; margin-bottom: 0.25rem;">/57-plunge-pool-ideas-2026-for-stylish-and-modern-outdoor-spaces/</div>
+              <h2 class="font-serif-editorial text-lg font-bold text-stone-900 group-hover:text-[#BE123C]" style="margin-bottom: 0.5rem; transition: color 0.15s ease;">
+                57 Plunge Pool Ideas 2026 For Stylish And Modern Outdoor Spaces
+              </h2>
+              <p class="text-xs text-stone-500" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                Plunge pool ideas 2026 are transforming small outdoor spaces into stylish and refreshing retreats. As modern homes prior...
+              </p>
+            </div>
+            <div style="padding: 0.75rem 1.25rem; background-color: #FAFAFA; border-top: 1px solid var(--pseo-card-border); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; font-weight: 500; color: #78716C;">
+              <span>Read Guide</span>
+              <span style="color: #BE123C; font-weight: 700;">→</span>
+            </div>
+          </a>
+        </article>
+        
+        <article class="pseo-card group">
+          <a href="https://annadeco.github.io/57-outdoor-pool-area-above-ground-2026-ideas-for-a-stylish-backyard-oasis/" style="display: flex; flex-direction: column; height: 100%;">
+            <div class="pseo-hero-media">
+              <img src="https://annadeco.github.io/assets/images/57-outdoor-pool-area-above-ground-2026-ideas-for-a-stylish-backyard-oasis.jpg" alt="57 Outdoor Pool Area Above Ground 2026 Ideas For A Stylish Backyard Oasis" loading="lazy" onerror="this.onerror=null; this.src='https://annadeco.github.io/assets/images/57-outdoor-pool-area-above-ground-2026-ideas-for-a-stylish-backyard-oasis.svg';">
+              <span class="pseo-badge" style="position: absolute; top: 0.75rem; left: 0.75rem; background-color: rgba(255, 255, 255, 0.95); color: #1C1917; font-size: 0.625rem;">
+                Pool1
+              </span>
+            </div>
+            <div style="padding: 1.25rem; flex: 1 0 auto;">
+              <div style="font-family: monospace; font-size: 0.7rem; color: #A8A29E; margin-bottom: 0.25rem;">/57-outdoor-pool-area-above-ground-2026-ideas-for-a-stylish-backyard-oasis/</div>
+              <h2 class="font-serif-editorial text-lg font-bold text-stone-900 group-hover:text-[#BE123C]" style="margin-bottom: 0.5rem; transition: color 0.15s ease;">
+                57 Outdoor Pool Area Above Ground 2026 Ideas For A Stylish Backyard Oasis
+              </h2>
+              <p class="text-xs text-stone-500" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                Above-ground pools are becoming one of the most exciting backyard design trends in 2026, transforming ordinary outdoor s...
+              </p>
+            </div>
+            <div style="padding: 0.75rem 1.25rem; background-color: #FAFAFA; border-top: 1px solid var(--pseo-card-border); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; font-weight: 500; color: #78716C;">
+              <span>Read Guide</span>
+              <span style="color: #BE123C; font-weight: 700;">→</span>
+            </div>
+          </a>
+        </article>
+        
+        <article class="pseo-card group">
+          <a href="https://annadeco.github.io/25-poolside-cabana-ideas-for-a-cozy-stylish-and-relaxing-backyard/" style="display: flex; flex-direction: column; height: 100%;">
+            <div class="pseo-hero-media">
+              <img src="https://annadeco.github.io/assets/images/25-poolside-cabana-ideas-for-a-cozy-stylish-and-relaxing-backyard.jpg" alt="25 Poolside Cabana Ideas for a Cozy, Stylish, and Relaxing Backyard" loading="lazy" onerror="this.onerror=null; this.src='https://annadeco.github.io/assets/images/25-poolside-cabana-ideas-for-a-cozy-stylish-and-relaxing-backyard.svg';">
+              <span class="pseo-badge" style="position: absolute; top: 0.75rem; left: 0.75rem; background-color: rgba(255, 255, 255, 0.95); color: #1C1917; font-size: 0.625rem;">
+                Pool1
+              </span>
+            </div>
+            <div style="padding: 1.25rem; flex: 1 0 auto;">
+              <div style="font-family: monospace; font-size: 0.7rem; color: #A8A29E; margin-bottom: 0.25rem;">/25-poolside-cabana-ideas-for-a-cozy-stylish-and-relaxing-backyard/</div>
+              <h2 class="font-serif-editorial text-lg font-bold text-stone-900 group-hover:text-[#BE123C]" style="margin-bottom: 0.5rem; transition: color 0.15s ease;">
+                25 Poolside Cabana Ideas for a Cozy, Stylish, and Relaxing Backyard
+              </h2>
+              <p class="text-xs text-stone-500" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                Creating a beautiful outdoor retreat becomes much easier when you start with the right Poolside Cabana Ideas. A cabana a...
+              </p>
+            </div>
+            <div style="padding: 0.75rem 1.25rem; background-color: #FAFAFA; border-top: 1px solid var(--pseo-card-border); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; font-weight: 500; color: #78716C;">
+              <span>Read Guide</span>
+              <span style="color: #BE123C; font-weight: 700;">→</span>
+            </div>
+          </a>
+        </article>
+        
+        <article class="pseo-card group">
+          <a href="https://annadeco.github.io/above-ground-pool-ideas-27-stylish-cozy-backyard-designs/" style="display: flex; flex-direction: column; height: 100%;">
+            <div class="pseo-hero-media">
+              <img src="https://annadeco.github.io/assets/images/above-ground-pool-ideas-27-stylish-cozy-backyard-designs.jpg" alt="Above Ground Pool Ideas: 27 Stylish &amp; Cozy Backyard Designs" loading="lazy" onerror="this.onerror=null; this.src='https://annadeco.github.io/assets/images/above-ground-pool-ideas-27-stylish-cozy-backyard-designs.svg';">
+              <span class="pseo-badge" style="position: absolute; top: 0.75rem; left: 0.75rem; background-color: rgba(255, 255, 255, 0.95); color: #1C1917; font-size: 0.625rem;">
+                Pool1
+              </span>
+            </div>
+            <div style="padding: 1.25rem; flex: 1 0 auto;">
+              <div style="font-family: monospace; font-size: 0.7rem; color: #A8A29E; margin-bottom: 0.25rem;">/above-ground-pool-ideas-27-stylish-cozy-backyard-designs/</div>
+              <h2 class="font-serif-editorial text-lg font-bold text-stone-900 group-hover:text-[#BE123C]" style="margin-bottom: 0.5rem; transition: color 0.15s ease;">
+                Above Ground Pool Ideas: 27 Stylish &amp; Cozy Backyard Designs
+              </h2>
+              <p class="text-xs text-stone-500" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                If you think an above ground pool can’t feel luxurious or stylish, think again. With the right design touches, these poo...
+              </p>
+            </div>
+            <div style="padding: 0.75rem 1.25rem; background-color: #FAFAFA; border-top: 1px solid var(--pseo-card-border); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; font-weight: 500; color: #78716C;">
+              <span>Read Guide</span>
+              <span style="color: #BE123C; font-weight: 700;">→</span>
+            </div>
+          </a>
+        </article>
+        
+        <article class="pseo-card group">
+          <a href="https://annadeco.github.io/50-small-backyard-pool-ideas/" style="display: flex; flex-direction: column; height: 100%;">
+            <div class="pseo-hero-media">
+              <img src="https://annadeco.github.io/assets/images/50-small-backyard-pool-ideas.jpg" alt="50 Small Backyard Pool Ideas" loading="lazy" onerror="this.onerror=null; this.src='https://annadeco.github.io/assets/images/50-small-backyard-pool-ideas.svg';">
+              <span class="pseo-badge" style="position: absolute; top: 0.75rem; left: 0.75rem; background-color: rgba(255, 255, 255, 0.95); color: #1C1917; font-size: 0.625rem;">
+                Pool1
+              </span>
+            </div>
+            <div style="padding: 1.25rem; flex: 1 0 auto;">
+              <div style="font-family: monospace; font-size: 0.7rem; color: #A8A29E; margin-bottom: 0.25rem;">/50-small-backyard-pool-ideas/</div>
+              <h2 class="font-serif-editorial text-lg font-bold text-stone-900 group-hover:text-[#BE123C]" style="margin-bottom: 0.5rem; transition: color 0.15s ease;">
+                50 Small Backyard Pool Ideas
+              </h2>
+              <p class="text-xs text-stone-500" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                Stressing about how to fit a pool into your tiny yard? Don’t worry, you don’t need a huge estate to enjoy a cool dip! We...
+              </p>
+            </div>
+            <div style="padding: 0.75rem 1.25rem; background-color: #FAFAFA; border-top: 1px solid var(--pseo-card-border); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; font-weight: 500; color: #78716C;">
+              <span>Read Guide</span>
+              <span style="color: #BE123C; font-weight: 700;">→</span>
+            </div>
+          </a>
+        </article>
+        
+        <article class="pseo-card group">
+          <a href="https://annadeco.github.io/50-above-ground-pool-ideas/" style="display: flex; flex-direction: column; height: 100%;">
+            <div class="pseo-hero-media">
+              <img src="https://annadeco.github.io/assets/images/50-above-ground-pool-ideas.jpg" alt="50 Above Ground Pool Ideas" loading="lazy" onerror="this.onerror=null; this.src='https://annadeco.github.io/assets/images/50-above-ground-pool-ideas.svg';">
+              <span class="pseo-badge" style="position: absolute; top: 0.75rem; left: 0.75rem; background-color: rgba(255, 255, 255, 0.95); color: #1C1917; font-size: 0.625rem;">
+                Pool1
+              </span>
+            </div>
+            <div style="padding: 1.25rem; flex: 1 0 auto;">
+              <div style="font-family: monospace; font-size: 0.7rem; color: #A8A29E; margin-bottom: 0.25rem;">/50-above-ground-pool-ideas/</div>
+              <h2 class="font-serif-editorial text-lg font-bold text-stone-900 group-hover:text-[#BE123C]" style="margin-bottom: 0.5rem; transition: color 0.15s ease;">
+                50 Above Ground Pool Ideas
+              </h2>
+              <p class="text-xs text-stone-500" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                Are you tired of that big metal circle sticking out in your yard? You want a pool, but you don’t want it to look cheap. ...
+              </p>
+            </div>
+            <div style="padding: 0.75rem 1.25rem; background-color: #FAFAFA; border-top: 1px solid var(--pseo-card-border); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; font-weight: 500; color: #78716C;">
+              <span>Read Guide</span>
+              <span style="color: #BE123C; font-weight: 700;">→</span>
+            </div>
+          </a>
+        </article>
+        
+        <article class="pseo-card group">
+          <a href="https://annadeco.github.io/50-pool-deck-decorating-ideas/" style="display: flex; flex-direction: column; height: 100%;">
+            <div class="pseo-hero-media">
+              <img src="https://annadeco.github.io/assets/images/50-pool-deck-decorating-ideas.jpg" alt="50 Pool Deck Decorating Ideas" loading="lazy" onerror="this.onerror=null; this.src='https://annadeco.github.io/assets/images/50-pool-deck-decorating-ideas.svg';">
+              <span class="pseo-badge" style="position: absolute; top: 0.75rem; left: 0.75rem; background-color: rgba(255, 255, 255, 0.95); color: #1C1917; font-size: 0.625rem;">
+                Pool1
+              </span>
+            </div>
+            <div style="padding: 1.25rem; flex: 1 0 auto;">
+              <div style="font-family: monospace; font-size: 0.7rem; color: #A8A29E; margin-bottom: 0.25rem;">/50-pool-deck-decorating-ideas/</div>
+              <h2 class="font-serif-editorial text-lg font-bold text-stone-900 group-hover:text-[#BE123C]" style="margin-bottom: 0.5rem; transition: color 0.15s ease;">
+                50 Pool Deck Decorating Ideas
+              </h2>
+              <p class="text-xs text-stone-500" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                Is your pool deck looking a little sad and uninspired after a long season? We all want that expensive resort vibe withou...
+              </p>
+            </div>
+            <div style="padding: 0.75rem 1.25rem; background-color: #FAFAFA; border-top: 1px solid var(--pseo-card-border); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; font-weight: 500; color: #78716C;">
+              <span>Read Guide</span>
+              <span style="color: #BE123C; font-weight: 700;">→</span>
+            </div>
+          </a>
+        </article>
+        
+    </div>
+  </main>
+
+  <footer class="pseo-footer">
+    <div class="pseo-container">
+      <p>© 2026 https://asqstyle.com Editorial Hub. Zero-404 static pSEO architecture.</p>
+    </div>
+  </footer>
+</body>
+</html>
