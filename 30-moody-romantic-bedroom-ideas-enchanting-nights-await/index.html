@@ -324,6 +324,266 @@
       font-size: 0.875rem;
       color: #78716C;
     }
+
+    /* --- Blogger Header, Sticky Nav & Mobile Optimization --- */
+    .pseo-blogger-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--pseo-card-border);
+      transition: box-shadow 0.2s ease;
+    }
+
+    .pseo-announcement-bar {
+      background: #FAF8F5;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      padding: 0.4rem 0;
+      font-size: 0.72rem;
+      color: #78716C;
+    }
+
+    .pseo-brand-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.85rem 0 0.5rem 0;
+      gap: 1rem;
+    }
+
+    .pseo-brand-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .pseo-breadcrumb-nav {
+      font-size: 0.72rem;
+      color: #78716C;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .pseo-byline {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.85rem;
+      padding: 0.85rem 1.15rem;
+      background: #FFFFFF;
+      border: 1px solid var(--pseo-card-border);
+      border-radius: 0.85rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .pseo-byline-avatar {
+      width: 2.25rem;
+      height: 2.25rem;
+      border-radius: 9999px;
+      background: var(--pseo-accent);
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.8rem;
+      flex-shrink: 0;
+      border: 2px solid #FAF8F5;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+    }
+
+    /* --- Multi-Column Rich Blogger Footer --- */
+    .pseo-blogger-footer {
+      background: #FFFFFF;
+      border-top: 1px solid var(--pseo-card-border);
+      padding: 3.5rem 0 2rem 0;
+      margin-top: auto;
+      font-size: 0.85rem;
+      color: #64748B;
+    }
+
+    .pseo-footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    @media (min-width: 640px) {
+      .pseo-footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .pseo-footer-grid {
+        grid-template-columns: 1.4fr 1fr 1fr 1.4fr;
+      }
+    }
+
+    .pseo-footer-col {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .pseo-footer-bio {
+      font-size: 0.8rem;
+      line-height: 1.6;
+      color: #64748B;
+      margin-bottom: 1rem;
+    }
+
+    .pseo-footer-social {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .pseo-social-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: #475569;
+      background: #F1F5F9;
+      padding: 0.3rem 0.65rem;
+      border-radius: 0.375rem;
+      text-decoration: none;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+    .pseo-social-chip:hover {
+      background: #E2E8F0;
+      color: #0F172A;
+    }
+
+    .pseo-footer-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--pseo-text);
+      margin-bottom: 0.85rem;
+    }
+
+    .pseo-footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+
+    .pseo-footer-links a {
+      color: #64748B;
+      text-decoration: none;
+      font-size: 0.82rem;
+      transition: color 0.15s ease;
+    }
+
+    .pseo-footer-links a:hover {
+      color: var(--pseo-accent);
+    }
+
+    .pseo-footer-newsletter-desc {
+      font-size: 0.8rem;
+      line-height: 1.5;
+      color: #64748B;
+      margin-bottom: 0.75rem;
+    }
+
+    .pseo-newsletter-form {
+      display: flex;
+      gap: 0.5rem;
+      align-items: stretch;
+      width: 100%;
+    }
+
+    .pseo-newsletter-input {
+      flex: 1;
+      min-width: 0;
+      padding: 0.6rem 0.75rem;
+      border: 1px solid var(--pseo-card-border);
+      border-radius: 0.5rem;
+      font-size: 0.8rem;
+      background: #FAF8F5;
+      color: var(--pseo-text);
+      outline: none;
+    }
+    .pseo-newsletter-input:focus {
+      border-color: var(--pseo-accent);
+      background: #FFFFFF;
+    }
+
+    .pseo-newsletter-btn {
+      background: var(--pseo-accent);
+      color: #FFFFFF;
+      border: none;
+      border-radius: 0.5rem;
+      padding: 0.6rem 0.95rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: opacity 0.2s;
+    }
+    .pseo-newsletter-btn:hover {
+      opacity: 0.9;
+    }
+
+    .pseo-footer-bottom {
+      border-top: 1px solid var(--pseo-card-border);
+      padding-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      font-size: 0.75rem;
+      color: #94A3B8;
+    }
+
+    @media (min-width: 768px) {
+      .pseo-footer-bottom {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+
+    .pseo-footer-disclosure {
+      font-size: 0.72rem;
+      color: #94A3B8;
+      margin-top: 0.25rem;
+      max-width: 640px;
+      line-height: 1.5;
+    }
+
+    .pseo-back-to-top {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #64748B;
+      text-decoration: none;
+      padding: 0.4rem 0.75rem;
+      border: 1px solid var(--pseo-card-border);
+      border-radius: 0.375rem;
+      background: #FAFAFA;
+      transition: background 0.15s ease;
+    }
+    .pseo-back-to-top:hover {
+      background: #F4F4F5;
+      color: var(--pseo-text);
+    }
+
     
     body { background-color: #FFFDF9; }
     .pm-container { max-width: 1100px; margin: 0 auto; padding: 0 1rem 4rem; }
@@ -386,12 +646,51 @@
 
   <div class="pm-magazine-banner">&#x1F4CC; Visual Pin Discovery &mdash; Curated by asqstyle.com Editorial</div>
 
-  <header class="pseo-header">
-    <div class="pseo-container">
-      <div style="display:flex;align-items:center;justify-content:space-between;font-size:0.75rem;color:#71717A;margin-bottom:0.5rem;">
-        <nav aria-label="Breadcrumb"><a href="/" class="hover:underline">Home</a> <span style="margin: 0 0.25rem;">/</span> <span class="font-semibold text-stone-900">30 Moody Romantic Bedroom Ideas: Enchanting N</span></nav>
-        <a href="https://asqstyle.com/" target="_blank" rel="noopener" style="font-weight:700;color:#BE123C;">asqstyle.com &#8594;</a>
+
+  <header class="pseo-header pseo-blogger-header">
+    <div class="pseo-announcement-bar">
+      <div class="pseo-container" style="display:flex;align-items:center;justify-content:space-between;gap:1rem;">
+        <nav aria-label="Breadcrumb" class="pseo-breadcrumb-nav"><a href="/" class="hover:underline">Home</a> <span style="margin: 0 0.25rem;">/</span> <span class="font-semibold text-stone-900">30 Moody Romantic Bedroom Ideas: Enchanting N</span></nav>
+        <div style="display:flex;align-items:center;gap:0.75rem;font-size:0.7rem;font-weight:600;">
+          <span class="hidden sm:inline" style="color:#A8A29E;">Vol. 04 &middot; Curated Decor</span>
+          <a href="https://asqstyle.com/" target="_blank" rel="noopener" style="color:#1C1917;display:inline-flex;align-items:center;gap:0.25rem;">
+            <span>asqstyle.com Official</span>
+            <span style="color:#BE123C;font-weight:700;">&#8594;</span>
+          </a>
+        </div>
       </div>
+    </div>
+
+    <div class="pseo-container">
+      <div class="pseo-brand-row">
+        <a href="/" class="pseo-brand-link" aria-label="ASQSTYLE Home">
+      <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;">
+        <circle cx="50" cy="50" r="46" fill="#FAF8F5" stroke="#18181B" stroke-width="3"/>
+        <circle cx="50" cy="50" r="40" fill="none" stroke="#BE123C" stroke-width="1.5" stroke-dasharray="3 3"/>
+        <path d="M 32 68 L 32 44 C 32 30, 68 30, 68 44 L 68 68 Z" stroke="#18181B" stroke-width="2.5" fill="none"/>
+        <path d="M 50 64 C 50 48, 50 36, 50 28" stroke="#18181B" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="50" cy="24" r="3" fill="#BE123C"/>
+        <text x="50" y="58" font-family="'Playfair Display', Georgia, serif" font-size="20" font-weight="700" fill="#18181B" text-anchor="middle">AS</text>
+      </svg>
+      <div style="display:flex;flex-direction:column;line-height:1.1;">
+        <div style="display:flex;align-items:center;gap:0.4rem;">
+          <span style="font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:1.35rem;letter-spacing:0.14em;color:#18181B;">ASQSTYLE</span>
+          <span style="background:#BE123C;color:#FFFFFF;font-size:0.55rem;font-weight:700;padding:0.15rem 0.45rem;border-radius:9999px;letter-spacing:0.06em;text-transform:uppercase;">Journal</span>
+        </div>
+        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.2em;color:#78716C;text-transform:uppercase;margin-top:0.15rem;">Home &middot; Interiors &middot; Living</span>
+      </div>
+    </a>
+        <div style="display:flex;align-items:center;gap:0.6rem;">
+          <a href="https://pinterest.com/" target="_blank" rel="noopener" class="pseo-header-action-btn hidden sm:inline-flex" style="border:1px solid #E7E2DA;background:#FAF8F5;color:#1C1917;padding:0.4rem 0.85rem;border-radius:9999px;font-size:0.72rem;font-weight:700;display:inline-flex;align-items:center;gap:0.35rem;text-decoration:none;">
+            <span>&#x1F4CC; Follow</span>
+          </a>
+          <a href="/" class="pseo-header-action-btn" style="background:#1C1917;color:#FAF8F5 !important;padding:0.4rem 0.95rem;border-radius:9999px;font-size:0.72rem;font-weight:700;display:inline-flex;align-items:center;gap:0.35rem;text-decoration:none;">
+            <span>Explore Hub</span>
+            <span style="color:#BE123C;">&#8594;</span>
+          </a>
+        </div>
+      </div>
+
       
     <div class="pseo-pills-bar">
       <span style="font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #A8A29E; margin-right: 0.25rem; flex-shrink: 0;">Featured Guides:</span>
@@ -412,6 +711,7 @@
     
     </div>
   </header>
+  
 
   <main class="pseo-main">
     <div class="pm-container">
@@ -450,6 +750,30 @@
           <span style="font-size:0.72rem;color:#71717A;">Updated 2025-12-12</span>
         </div>
         <h2 class="pm-article-title">30 Moody Romantic Bedroom Ideas: Enchanting Nights Await</h2>
+        
+    <div class="pseo-byline">
+      <div style="display:flex;align-items:center;gap:0.75rem;">
+        <div class="pseo-byline-avatar">AS</div>
+        <div>
+          <div style="font-size:0.82rem;font-weight:700;color:#1C1917;">
+            Curated by <span style="text-decoration:underline;text-decoration-color:#BE123C;">Asqstyle Studio</span>
+          </div>
+          <div style="font-size:0.7rem;color:#78716C;display:flex;align-items:center;gap:0.4rem;flex-wrap:wrap;margin-top:0.15rem;">
+            <span>&#x23F1; 6 min read</span>
+            <span>&middot;</span>
+            <span>Updated 2025-12-12</span>
+            <span>&middot;</span>
+            <span style="color:#15803D;font-weight:600;">&#x2713; Editorial Verified</span>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:0.5rem;">
+        <a href="https://pinterest.com/pin/create/button/?url=https%3A//asqstyle.com/30-moody-romantic-bedroom-ideas-enchanting-nights-await/" target="_blank" rel="noopener" class="pseo-byline-pin-btn" style="background:#FFF1F2;color:#BE123C;border:1px solid #FECDD3;padding:0.35rem 0.75rem;border-radius:9999px;font-size:0.72rem;font-weight:700;display:inline-flex;align-items:center;gap:0.3rem;text-decoration:none;">
+          <span>&#x1F4CC; Save Idea</span>
+        </a>
+      </div>
+    </div>
+    
         <p class="pm-excerpt">Create a moody romantic bedroom with dim lighting, luxurious fabrics, and deep, rich color schemes. Incorporate plush textures and scented candles for added ambiance. Transform your bedroom into a romantic sanctuary with these moody ideas. By focusing on dim lighting, luxurious fabrics, and deep color palettes, you can create a cozy and intimate atmosphere. Add…</p>
 
         <div class="pm-viral-bar">
@@ -717,10 +1041,89 @@
     </div>
   </main>
 
-  <footer class="pseo-footer" style="border-top:2px solid #BE123C;">
+
+  <footer class="pseo-footer pseo-blogger-footer">
     <div class="pseo-container">
-      <p>&copy; 2026 asqstyle.com Pin Discovery. High-save-rate coastal bedroom decor, visual pin boards, and lifestyle inspiration.</p>
+      <div class="pseo-footer-grid">
+        <!-- Col 1: Brand & Manifesto -->
+        <div class="pseo-footer-col pseo-footer-brand-col">
+          <div style="margin-bottom:1rem;">
+            <a href="/" class="pseo-brand-link" aria-label="ASQSTYLE Home">
+          <svg width="34" height="34" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;">
+            <circle cx="50" cy="50" r="46" fill="#FAF8F5" stroke="#18181B" stroke-width="3"/>
+            <circle cx="50" cy="50" r="40" fill="none" stroke="#BE123C" stroke-width="1.5" stroke-dasharray="3 3"/>
+            <path d="M 32 68 L 32 44 C 32 30, 68 30, 68 44 L 68 68 Z" stroke="#18181B" stroke-width="2.5" fill="none"/>
+            <text x="50" y="58" font-family="'Playfair Display', Georgia, serif" font-size="22" font-weight="700" fill="#18181B" text-anchor="middle">AS</text>
+            <circle cx="50" cy="24" r="3" fill="#BE123C"/>
+          </svg>
+          <div style="display:flex;flex-direction:column;line-height:1.1;">
+            <span style="font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:1.15rem;letter-spacing:0.12em;color:#18181B;">ASQSTYLE</span>
+            <span style="font-size:0.6rem;font-weight:700;letter-spacing:0.18em;color:#78716C;text-transform:uppercase;">Interiors Journal</span>
+          </div>
+        </a>
+          </div>
+          <p class="pseo-footer-bio">
+            An independent visual archive and curated design journal exploring modern bedroom refreshes, Scandinavian minimalism, and intentional interior styling.
+          </p>
+          <div class="pseo-footer-social">
+            <a href="https://pinterest.com/" target="_blank" rel="noopener" class="pseo-social-chip">&#x1F4CC; Pinterest</a>
+            <a href="https://instagram.com/" target="_blank" rel="noopener" class="pseo-social-chip">&#x1F4F7; Instagram</a>
+            <a href="https://asqstyle.com/" target="_blank" rel="noopener" class="pseo-social-chip">&#x1F310; Official Studio</a>
+          </div>
+        </div>
+
+        <!-- Col 2: Curated Editorial Hubs -->
+        <div class="pseo-footer-col">
+          <div class="pseo-footer-title">Curated Spaces</div>
+          <ul class="pseo-footer-links">
+            <li><a href="/">Sanctuary Hub Overview</a></li>
+            <li><a href="/ikea-hacks/">IKEA Storage &amp; Hacks</a></li>
+            <li><a href="/bedroom-design/">Bedroom Styling &amp; Linens</a></li>
+            <li><a href="/living-room/">Minimalist Living Rooms</a></li>
+            <li><a href="/kitchen-organization/">Kitchen &amp; Pantry Spaces</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Editorial Studio -->
+        <div class="pseo-footer-col">
+          <div class="pseo-footer-title">Editorial Studio</div>
+          <ul class="pseo-footer-links">
+            <li><a href="/">Room Action Checklists</a></li>
+            <li><a href="/">Key Styling Takeaways</a></li>
+            <li><a href="/">Architectural Spec Guides</a></li>
+            <li><a href="https://asqstyle.com/" target="_blank" rel="noopener">Material Sourcing Notes</a></li>
+            <li><a href="https://asqstyle.com/" target="_blank" rel="noopener">Curatorial Standards</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: The Weekly Room Edit (Newsletter) -->
+        <div class="pseo-footer-col pseo-footer-newsletter-col">
+          <div class="pseo-footer-title">The Weekly Room Edit</div>
+          <p class="pseo-footer-newsletter-desc">
+            Get handpicked bedroom makeovers, material swatches, and weekend styling checklists delivered to your inbox every Friday.
+          </p>
+          <form class="pseo-newsletter-form" onsubmit="event.preventDefault(); var btn=this.querySelector('button'); btn.innerText='Subscribed! ✨'; btn.style.background='#15803D'; this.querySelector('input').disabled=true;">
+            <input type="email" placeholder="Your email address..." required class="pseo-newsletter-input" aria-label="Email address for weekly room edit">
+            <button type="submit" class="pseo-newsletter-btn">Join Edit</button>
+          </form>
+          <div style="font-size:0.68rem;color:#9CA3AF;margin-top:0.4rem;">Zero spam. Curated interior inspiration only.</div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="pseo-footer-bottom">
+        <div class="pseo-footer-legal">
+          <p>&copy; 2026 asqstyle.com Lifestyle Journal. All rights reserved.</p>
+          <p class="pseo-footer-disclosure">
+            asqstyle.com is an independently curated decor publication. When you purchase through our links, we may earn an affiliate commission at no extra cost to you.
+          </p>
+        </div>
+        <div class="pseo-footer-actions">
+          <a href="#" class="pseo-back-to-top" onclick="window.scrollTo({top:0, behavior:'smooth'}); return false;">Back to Top &#8593;</a>
+        </div>
+      </div>
     </div>
   </footer>
+  
 </body>
 </html>
