@@ -266,6 +266,31 @@
       color: #78716C;
     }
 
+    /* --- Programmatic SEO: Table of Contents & FAQ Accordion --- */
+    .pseo-toc-box {
+      scroll-margin-top: 5rem;
+    }
+    .pseo-toc-link:hover {
+      background: #FFFFFF !important;
+      border-color: var(--pseo-accent) !important;
+      color: var(--pseo-accent) !important;
+      transform: translateY(-1px);
+    }
+    .pseo-faq-item[open] .pseo-faq-toggle {
+      transform: rotate(45deg);
+    }
+    .pseo-faq-item[open] {
+      border-color: var(--pseo-accent) !important;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    }
+    .pseo-custom-logo {
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+    .pseo-custom-logo:hover {
+      opacity: 0.92;
+      transform: scale(1.02);
+    }
+
     /* --- Blogger Header, Sticky Nav & Mobile Optimization --- */
     .pseo-blogger-header {
       position: sticky;
@@ -546,21 +571,21 @@
 
     <div class="pseo-container">
       <div class="pseo-brand-row">
-        <a href="/" class="pseo-brand-link" aria-label="ASQSTYLE Home">
+        <a href="/" class="pseo-brand-link" aria-label="Anna Deco Home">
       <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;">
         <circle cx="50" cy="50" r="46" fill="#FAF8F5" stroke="#18181B" stroke-width="3"/>
         <circle cx="50" cy="50" r="40" fill="none" stroke="#BE123C" stroke-width="1.5" stroke-dasharray="3 3"/>
         <path d="M 32 68 L 32 44 C 32 30, 68 30, 68 44 L 68 68 Z" stroke="#18181B" stroke-width="2.5" fill="none"/>
         <path d="M 50 64 C 50 48, 50 36, 50 28" stroke="#18181B" stroke-width="2" stroke-linecap="round"/>
         <circle cx="50" cy="24" r="3" fill="#BE123C"/>
-        <text x="50" y="58" font-family="'Playfair Display', Georgia, serif" font-size="20" font-weight="700" fill="#18181B" text-anchor="middle">AS</text>
+        <text x="50" y="58" font-family="'Playfair Display', Georgia, serif" font-size="20" font-weight="700" fill="#18181B" text-anchor="middle">AN</text>
       </svg>
       <div style="display:flex;flex-direction:column;line-height:1.1;">
         <div style="display:flex;align-items:center;gap:0.4rem;">
-          <span style="font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:1.35rem;letter-spacing:0.14em;color:#18181B;">ASQSTYLE</span>
+          <span style="font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:1.35rem;letter-spacing:0.14em;color:#18181B;">Anna Deco</span>
           <span style="background:#BE123C;color:#FFFFFF;font-size:0.55rem;font-weight:700;padding:0.15rem 0.45rem;border-radius:9999px;letter-spacing:0.06em;text-transform:uppercase;">Journal</span>
         </div>
-        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.2em;color:#78716C;text-transform:uppercase;margin-top:0.15rem;">Home &middot; Interiors &middot; Living</span>
+        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.2em;color:#78716C;text-transform:uppercase;margin-top:0.15rem;">Interior Design &amp; Curated Living</span>
       </div>
     </a>
         <div style="display:flex;align-items:center;gap:0.6rem;">

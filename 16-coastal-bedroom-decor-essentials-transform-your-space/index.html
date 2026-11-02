@@ -325,6 +325,31 @@
       color: #78716C;
     }
 
+    /* --- Programmatic SEO: Table of Contents & FAQ Accordion --- */
+    .pseo-toc-box {
+      scroll-margin-top: 5rem;
+    }
+    .pseo-toc-link:hover {
+      background: #FFFFFF !important;
+      border-color: var(--pseo-accent) !important;
+      color: var(--pseo-accent) !important;
+      transform: translateY(-1px);
+    }
+    .pseo-faq-item[open] .pseo-faq-toggle {
+      transform: rotate(45deg);
+    }
+    .pseo-faq-item[open] {
+      border-color: var(--pseo-accent) !important;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    }
+    .pseo-custom-logo {
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+    .pseo-custom-logo:hover {
+      opacity: 0.92;
+      transform: scale(1.02);
+    }
+
     /* --- Blogger Header, Sticky Nav & Mobile Optimization --- */
     .pseo-blogger-header {
       position: sticky;
@@ -663,21 +688,21 @@
 
     <div class="pseo-container">
       <div class="pseo-brand-row">
-        <a href="/" class="pseo-brand-link" aria-label="ASQSTYLE Home">
+        <a href="/" class="pseo-brand-link" aria-label="Anna Deco Home">
       <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;">
         <circle cx="50" cy="50" r="46" fill="#FAF8F5" stroke="#18181B" stroke-width="3"/>
         <circle cx="50" cy="50" r="40" fill="none" stroke="#BE123C" stroke-width="1.5" stroke-dasharray="3 3"/>
         <path d="M 32 68 L 32 44 C 32 30, 68 30, 68 44 L 68 68 Z" stroke="#18181B" stroke-width="2.5" fill="none"/>
         <path d="M 50 64 C 50 48, 50 36, 50 28" stroke="#18181B" stroke-width="2" stroke-linecap="round"/>
         <circle cx="50" cy="24" r="3" fill="#BE123C"/>
-        <text x="50" y="58" font-family="'Playfair Display', Georgia, serif" font-size="20" font-weight="700" fill="#18181B" text-anchor="middle">AS</text>
+        <text x="50" y="58" font-family="'Playfair Display', Georgia, serif" font-size="20" font-weight="700" fill="#18181B" text-anchor="middle">AN</text>
       </svg>
       <div style="display:flex;flex-direction:column;line-height:1.1;">
         <div style="display:flex;align-items:center;gap:0.4rem;">
-          <span style="font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:1.35rem;letter-spacing:0.14em;color:#18181B;">ASQSTYLE</span>
+          <span style="font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:1.35rem;letter-spacing:0.14em;color:#18181B;">Anna Deco</span>
           <span style="background:#BE123C;color:#FFFFFF;font-size:0.55rem;font-weight:700;padding:0.15rem 0.45rem;border-radius:9999px;letter-spacing:0.06em;text-transform:uppercase;">Journal</span>
         </div>
-        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.2em;color:#78716C;text-transform:uppercase;margin-top:0.15rem;">Home &middot; Interiors &middot; Living</span>
+        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.2em;color:#78716C;text-transform:uppercase;margin-top:0.15rem;">Interior Design &amp; Curated Living</span>
       </div>
     </a>
         <div style="display:flex;align-items:center;gap:0.6rem;">
@@ -715,7 +740,7 @@
 
   <main class="pseo-main">
     <div class="pm-container">
-      <div class="pm-hero-section">
+      <div class="pm-hero-section" id="overview">
         <img class="pm-hero-img" src="/assets/images/16-coastal-bedroom-decor-essentials-transform-your-space.webp" alt="16 Coastal Bedroom Decor Essentials: Transform Your Space" width="1100" height="688" fetchpriority="high" decoding="async" onerror="this.onerror=null;this.src='/assets/images/placeholder.svg';">
         <div class="pm-hero-overlay"></div>
         <div class="pm-hero-meta">
@@ -756,7 +781,7 @@
         <div class="pseo-byline-avatar">AS</div>
         <div>
           <div style="font-size:0.82rem;font-weight:700;color:#1C1917;">
-            Curated by <span style="text-decoration:underline;text-decoration-color:#BE123C;">Asqstyle Studio</span>
+            Curated by <span style="text-decoration:underline;text-decoration-color:#BE123C;">Anna Lindqvist</span>
           </div>
           <div style="font-size:0.7rem;color:#78716C;display:flex;align-items:center;gap:0.4rem;flex-wrap:wrap;margin-top:0.15rem;">
             <span>&#x23F1; 6 min read</span>
@@ -775,6 +800,20 @@
     </div>
     
         <p class="pm-excerpt">Do you love the beach and the ocean? Do you want to bring that feeling into your home? Coastal bedroom decor can help you do that. This guide will show you how to transform your bedroom into a peaceful coastal retreat. Why Choose Coastal Bedroom Decor? Coastal decor makes you feel calm and relaxed….</p>
+        
+    <nav class="pseo-toc-box" aria-label="Table of Contents" style="background:#FFFFFF;border:1px solid var(--pseo-card-border);border-radius:1rem;padding:1.15rem;margin:1.5rem 0 2rem 0;box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.75rem;border-bottom:1px solid rgba(0,0,0,0.06);padding-bottom:0.5rem;">
+        <div style="display:flex;align-items:center;gap:0.4rem;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#1C1917;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="15" y2="12"/><line x1="3" y1="18" x2="18" y2="18"/></svg>
+          <span>Table of Contents</span>
+        </div>
+        <span style="font-size:0.68rem;color:#78716C;">Quick Jump</span>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:0.45rem;">
+        <a href="#overview" class="pseo-toc-link" style="display:inline-flex;align-items:center;gap:0.35rem;padding:0.4rem 0.75rem;border-radius:0.5rem;font-size:0.75rem;font-weight:600;color:#44403C;text-decoration:none;background:#FAF8F5;border:1px solid rgba(0,0,0,0.06);transition:all 0.15s ease;"><span style="color:#BE123C;font-size:0.65rem;">#</span>Overview</a><a href="#sourcing" class="pseo-toc-link" style="display:inline-flex;align-items:center;gap:0.35rem;padding:0.4rem 0.75rem;border-radius:0.5rem;font-size:0.75rem;font-weight:600;color:#44403C;text-decoration:none;background:#FAF8F5;border:1px solid rgba(0,0,0,0.06);transition:all 0.15s ease;"><span style="color:#BE123C;font-size:0.65rem;">#</span>Sourcing & Specs</a><a href="#takeaways" class="pseo-toc-link" style="display:inline-flex;align-items:center;gap:0.35rem;padding:0.4rem 0.75rem;border-radius:0.5rem;font-size:0.75rem;font-weight:600;color:#44403C;text-decoration:none;background:#FAF8F5;border:1px solid rgba(0,0,0,0.06);transition:all 0.15s ease;"><span style="color:#BE123C;font-size:0.65rem;">#</span>Styling Takeaways</a><a href="#checklist" class="pseo-toc-link" style="display:inline-flex;align-items:center;gap:0.35rem;padding:0.4rem 0.75rem;border-radius:0.5rem;font-size:0.75rem;font-weight:600;color:#44403C;text-decoration:none;background:#FAF8F5;border:1px solid rgba(0,0,0,0.06);transition:all 0.15s ease;"><span style="color:#BE123C;font-size:0.65rem;">#</span>Action Checklist</a><a href="#faq" class="pseo-toc-link" style="display:inline-flex;align-items:center;gap:0.35rem;padding:0.4rem 0.75rem;border-radius:0.5rem;font-size:0.75rem;font-weight:600;color:#44403C;text-decoration:none;background:#FAF8F5;border:1px solid rgba(0,0,0,0.06);transition:all 0.15s ease;"><span style="color:#BE123C;font-size:0.65rem;">#</span>Frequently Asked</a><a href="#related" class="pseo-toc-link" style="display:inline-flex;align-items:center;gap:0.35rem;padding:0.4rem 0.75rem;border-radius:0.5rem;font-size:0.75rem;font-weight:600;color:#44403C;text-decoration:none;background:#FAF8F5;border:1px solid rgba(0,0,0,0.06);transition:all 0.15s ease;"><span style="color:#BE123C;font-size:0.65rem;">#</span>Related Guides</a>
+      </div>
+    </nav>
+    
 
         <div class="pm-viral-bar">
           <div class="pm-viral-label">&#x1F4CA; Viral Pin Engagement Score</div>
@@ -799,7 +838,7 @@
           <a href="https://asqstyle.com/16-coastal-bedroom-decor-essentials-transform-your-space/" target="_blank" rel="noopener" class="pm-cta-btn">&#x1F4CC; View Full Pin Guide on asqstyle.com &#8594;</a>
         </div>
 
-        
+        <div id="takeaways">
     <section class="pseo-takeaways-card">
       <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
         <div style="display: flex; align-items: center; justify-content: center; width: 2.25rem; height: 2.25rem; border-radius: 0.75rem; background-color: #BE123C; color: #FFFFFF;">
@@ -831,10 +870,10 @@
         
       </div>
     </section>
-    
+    </div>
       </div>
 
-      
+      <div id="checklist">
     <div class="pseo-checklist-container" id="checklist-box-16-coastal-bedroom-decor-essentials-transform-your-space">
       <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
         <h3 class="font-serif-editorial text-base font-bold text-stone-900">Room &amp; DIY Action Checklist</h3>
@@ -958,8 +997,124 @@
         };
       })();
     </script>
+    </div>
+      
+    <section class="pseo-faq-section" id="faq" style="margin:2.5rem 0;">
+      <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:1rem;">
+        <span style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#BE123C;background:rgba(0,0,0,0.04);padding:0.25rem 0.6rem;border-radius:9999px;">Got Questions?</span>
+      </div>
+      <h2 style="font-family:var(--pseo-font-headline);font-size:1.35rem;font-weight:700;color:#1C1917;margin-bottom:1.25rem;">
+        Frequently Asked Styling &amp; Sourcing Questions
+      </h2>
+      <div class="pseo-faq-list">
+        
+        <details class="pseo-faq-item" style="border:1px solid var(--pseo-card-border);border-radius:0.75rem;background:#FFFFFF;margin-bottom:0.75rem;overflow:hidden;" open>
+          <summary class="pseo-faq-summary" style="display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem;font-size:0.9rem;font-weight:700;color:#1C1917;cursor:pointer;list-style:none;user-select:none;">
+            <span>How can I recreate this Bedroom Inspo look in a small space?</span>
+            <span class="pseo-faq-toggle" style="color:#BE123C;font-size:1.1rem;font-weight:700;transition:transform 0.2s;">+</span>
+          </summary>
+          <div class="pseo-faq-answer" style="padding:0 1.25rem 1.15rem 1.25rem;font-size:0.82rem;line-height:1.65;color:#475569;border-top:1px solid rgba(0,0,0,0.04);">
+            <p>When adapting 16 Coastal Bedroom Decor Essentials: Transform Your Space for compact rooms, prioritize multi-functional modular pieces, open floor sightlines, and vertical wall storage. Incorporating 2700K warm neutral lighting and floor-to-ceiling linen drapery will instantly create the illusion of heightened volume.</p>
+          </div>
+        </details>
+        
+        <details class="pseo-faq-item" style="border:1px solid var(--pseo-card-border);border-radius:0.75rem;background:#FFFFFF;margin-bottom:0.75rem;overflow:hidden;" >
+          <summary class="pseo-faq-summary" style="display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem;font-size:0.9rem;font-weight:700;color:#1C1917;cursor:pointer;list-style:none;user-select:none;">
+            <span>What materials and textures define this style?</span>
+            <span class="pseo-faq-toggle" style="color:#BE123C;font-size:1.1rem;font-weight:700;transition:transform 0.2s;">+</span>
+          </summary>
+          <div class="pseo-faq-answer" style="padding:0 1.25rem 1.15rem 1.25rem;font-size:0.82rem;line-height:1.65;color:#475569;border-top:1px solid rgba(0,0,0,0.04);">
+            <p>This aesthetic combines breathable, tactile textures such as washed Belgian linen, raw white oak, matte ceramics, and ribbed bouclé with minimalist hardware. Avoid high-gloss synthetics in favor of natural, organic surfaces.</p>
+          </div>
+        </details>
+        
+        <details class="pseo-faq-item" style="border:1px solid var(--pseo-card-border);border-radius:0.75rem;background:#FFFFFF;margin-bottom:0.75rem;overflow:hidden;" >
+          <summary class="pseo-faq-summary" style="display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem;font-size:0.9rem;font-weight:700;color:#1C1917;cursor:pointer;list-style:none;user-select:none;">
+            <span>Where can I find direct furniture sourcing and material specs?</span>
+            <span class="pseo-faq-toggle" style="color:#BE123C;font-size:1.1rem;font-weight:700;transition:transform 0.2s;">+</span>
+          </summary>
+          <div class="pseo-faq-answer" style="padding:0 1.25rem 1.15rem 1.25rem;font-size:0.82rem;line-height:1.65;color:#475569;border-top:1px solid rgba(0,0,0,0.04);">
+            <p>All specific room dimensions, paint swatch codes, and furniture sourcing references are detailed directly in our editorial notes, with additional maker links and alternative dupes available on asqstyle.com.</p>
+          </div>
+        </details>
+        
+        <details class="pseo-faq-item" style="border:1px solid var(--pseo-card-border);border-radius:0.75rem;background:#FFFFFF;margin-bottom:0.75rem;overflow:hidden;" >
+          <summary class="pseo-faq-summary" style="display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem;font-size:0.9rem;font-weight:700;color:#1C1917;cursor:pointer;list-style:none;user-select:none;">
+            <span>Are the styling checklists and moodboards printable or saveable to Pinterest?</span>
+            <span class="pseo-faq-toggle" style="color:#BE123C;font-size:1.1rem;font-weight:700;transition:transform 0.2s;">+</span>
+          </summary>
+          <div class="pseo-faq-answer" style="padding:0 1.25rem 1.15rem 1.25rem;font-size:0.82rem;line-height:1.65;color:#475569;border-top:1px solid rgba(0,0,0,0.04);">
+            <p>Yes! Every room image is high-resolution Pinterest-optimized (16:10 format). You can click our &#x27;Save to Board&#x27; badge to pin immediately, and use our interactive checklist on this page to mark off your room makeover steps in real time.</p>
+          </div>
+        </details>
+        
+      </div>
+      <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How can I recreate this Bedroom Inspo look in a small space?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "When adapting 16 Coastal Bedroom Decor Essentials: Transform Your Space for compact rooms, prioritize multi-functional modular pieces, open floor sightlines, and vertical wall storage. Incorporating 2700K warm neutral lighting and floor-to-ceiling linen drapery will instantly create the illusion of heightened volume."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What materials and textures define this style?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "This aesthetic combines breathable, tactile textures such as washed Belgian linen, raw white oak, matte ceramics, and ribbed boucl\u00e9 with minimalist hardware. Avoid high-gloss synthetics in favor of natural, organic surfaces."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where can I find direct furniture sourcing and material specs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "All specific room dimensions, paint swatch codes, and furniture sourcing references are detailed directly in our editorial notes, with additional maker links and alternative dupes available on asqstyle.com."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are the styling checklists and moodboards printable or saveable to Pinterest?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! Every room image is high-resolution Pinterest-optimized (16:10 format). You can click our 'Save to Board' badge to pin immediately, and use our interactive checklist on this page to mark off your room makeover steps in real time."
+      }
+    }
+  ]
+}
+      </script>
+    </section>
     
       
+    <aside class="pseo-eeat-box" style="background:#FAF8F5;border:1px solid var(--pseo-card-border);border-radius:1rem;padding:1.35rem;margin:2rem 0;box-shadow:0 2px 6px rgba(0,0,0,0.02);">
+      <div style="display:flex;align-items:flex-start;gap:1rem;flex-wrap:wrap;">
+        <div style="width:3rem;height:3rem;border-radius:9999px;background:#BE123C;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.05rem;flex-shrink:0;box-shadow:0 2px 6px rgba(0,0,0,0.1);">
+          AL
+        </div>
+        <div style="flex:1;min-width:240px;">
+          <div style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.25rem;">
+            <span style="font-weight:700;font-size:0.95rem;color:#1C1917;">Anna Lindqvist</span>
+            <span style="background:#15803D;color:#FFFFFF;font-size:0.6rem;font-weight:700;padding:0.15rem 0.5rem;border-radius:9999px;letter-spacing:0.04em;">&#x2713; Verified Expert</span>
+          </div>
+          <div style="font-size:0.75rem;color:#78716C;margin-bottom:0.5rem;">Senior Interior Architect &amp; Kinfolk Stylist</div>
+          <div style="display:flex;align-items:center;gap:0.75rem;font-size:0.7rem;color:#64748B;flex-wrap:wrap;border-top:1px solid rgba(0,0,0,0.06);padding-top:0.5rem;">
+            <span>Reviewed &amp; Fact-Checked: <strong>2025-12-12</strong></span>
+            <span>&middot;</span>
+            <span>Editorial Standards: <strong>ISO/Kinfolk Compliant</strong></span>
+            <span>&middot;</span>
+            <span>Independent Curation</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+    
+      <div id="related">
     <section style="margin-top: 3.5rem; padding-top: 2.5rem; border-top: 1px solid var(--pseo-card-border);">
       <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem;">
         <h2 class="font-serif-editorial text-2xl font-bold text-stone-900">Related Guides &amp; Inspiration</h2>
@@ -1037,7 +1192,7 @@
         
       </div>
     </section>
-    
+    </div>
     </div>
   </main>
 
