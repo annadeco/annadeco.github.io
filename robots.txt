@@ -6,4 +6,4 @@ User-agent: Pinterestbot
 Allow: /
 Allow: /assets/images/
 
-Sitemap: https://annadeco.github.io/sitemap.xml
+Sitemap: https://annadeco.laurainsley01.workers.dev/sitemap.xml
